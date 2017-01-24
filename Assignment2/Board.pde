@@ -35,4 +35,12 @@ class Board
       //j = j+100;
     }
   }
-}
+    
+    void level1()
+    {
+        //this is used to block out areas the boxes can't move through
+        fill(0);
+        rect((width/2)+100, 0, 200, 200); //top 2 black squares 
+        rect(100, height-50, 400, 100);        
+    }
+ }

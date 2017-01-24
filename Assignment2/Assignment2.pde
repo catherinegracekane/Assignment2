@@ -25,6 +25,7 @@ void draw() {
   case 1:
 
     board1.display();
+    board1.level1();
     break;
 
   default:
