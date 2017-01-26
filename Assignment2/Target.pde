@@ -1,6 +1,7 @@
-class Target{
+class Target extends GameObject
+{
   
-  PVector pos;
+  int a = 95;
   
   Target(float x, float y)
   {
@@ -10,7 +11,11 @@ class Target{
   void display()
   {
     rectMode(CORNER);
+    fill(255);
+    stroke(0);
+    rect(pos.x, pos.y, 100, 100);
     stroke(18, 252, 231);
-    rect(pos.x, pos.y, 100, 100);  
+    line(pos.x, pos.y, pos.x+a, pos.y+a);
+    line(pos.x+a, pos.y, pos.x, pos.y+a);
   }
 }

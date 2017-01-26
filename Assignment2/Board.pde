@@ -14,6 +14,7 @@ class Board
 
   void display()
   {
+    
     fill(255);
     rectMode(CENTER);
     rect(pos.x, pos.y, boardW, boardH, 5);  
