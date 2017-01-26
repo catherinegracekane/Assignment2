@@ -5,7 +5,7 @@ class Boxes extends GameObject
 {
   
   int a = 100;
-  int b = a/5;
+  int j = (a/5);
   
   Boxes(float x, float y)
   {
@@ -19,10 +19,14 @@ class Boxes extends GameObject
     stroke(0);
     rect(pos.x, pos.y, 100, 100);
     stroke(0);
-    for(int i = 0 ; i < 5 ; i++)
+    line(pos.x, pos.y+j, pos.x+a, pos.y+j);
+    line(pos.x, pos.y+(j*4), pos.x+a, pos.y+(j*4));
+    for(int b = 20 ; b < a ; b+=20)
     {
-      line(pos.x+b, pos.y+25, pos.x+b, pos.y-(b*3));
+      line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
     }
+    
+
   }
 }
 
