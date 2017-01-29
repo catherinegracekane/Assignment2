@@ -46,6 +46,7 @@ class Boxes extends GameObject
         }
       }
     }
+    
   }
 }
 
