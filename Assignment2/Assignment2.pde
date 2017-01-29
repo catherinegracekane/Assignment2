@@ -103,7 +103,7 @@ void frontScreen() {
   noFill();
   strokeWeight(5);
   stroke(255);
-  rect((width/2), (height/4), width/4, width/4);
+  rect((width/2), (height/4), width/3, width/3);
 
   if ( key == RETURN || key == ENTER)
   {
