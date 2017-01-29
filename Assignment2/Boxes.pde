@@ -17,7 +17,9 @@ class Boxes extends GameObject
     rectMode(CORNER);
     fill(128); 
     stroke(0);
-    rect(pos.x, pos.y, 100, 100);
+    rect(pos.x, pos.y, a, a);
+    fill(245,239,57);
+    rect(pos.x, pos.y, j, j);    
     stroke(0);
     line(pos.x, pos.y+j, pos.x+a, pos.y+j);
     line(pos.x, pos.y+(j*4), pos.x+a, pos.y+(j*4));
