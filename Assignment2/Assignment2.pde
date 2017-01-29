@@ -93,10 +93,10 @@ void draw() {
 void frontScreen() {
 
   fill(59, 187, 245);
-  textSize(110);
-  text("S", width/5, (height/2)+15);
-  textSize(42);
-  text("okoban", (width/5)+70, height/2);
+  textSize(130);
+  text("B", width/5, (height/2)+15);
+  textSize(62);
+  text(" iddle", (width/5)+70, height/2);
   textSize(240);
   text("?", (width/2)+50, (height/2)+50);
 
