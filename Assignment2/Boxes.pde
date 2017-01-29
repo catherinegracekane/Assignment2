@@ -6,6 +6,8 @@ class Boxes extends GameObject
 
   int a = 100;
   int j = (a/5);
+  //boolean t = false;
+  int click = 0;
 
   Boxes(float x, float y)
   {
@@ -28,9 +30,14 @@ class Boxes extends GameObject
       line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
     }
 
-    if (mousePressed)
+
+
+    if (mousePressed && mouseX > pos.x && mouseX < (pos.x+j))
     {
-      if (mouseX > pos.x && mouseX < (pos.x+j))
+
+      click++; 
+
+      if (click == 1)
       {
         noFill();
         stroke(245, 239, 57);
@@ -44,11 +51,13 @@ class Boxes extends GameObject
         {
           line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
         }
-      }
-      
 
+        if (mousePressed)
+        {
+          click--;
+        }
+      }
     }
-    
   }
 }
 
