@@ -45,6 +45,8 @@ class Boxes extends GameObject
           line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
         }
       }
+      
+
     }
     
   }
