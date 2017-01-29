@@ -26,6 +26,12 @@ class Boxes extends GameObject
       line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
     }
     
+    if(mousePressed)
+    {
+      stroke(245,239,57);
+      rect(pos.x, pos.y, 100, 100);  
+    }
+    
 
   }
 }
