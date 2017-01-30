@@ -6,7 +6,7 @@ Boxes b11, b12, b13, b14, b15, b16, b17, b18;
 int gameState = 0; //counter used to determine screen
 void setup() {
 
-  size(800, 600);
+  size(800, 600, P2D);
   background(0);
 
   board1 = new Board();
