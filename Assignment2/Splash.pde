@@ -21,6 +21,9 @@ class Splash {
     textSize(240);
     text("?", (width/2)+50, (height/2)+50);
 
+    textSize(24);
+    text("Press Enter to Begin", (width/3), height/2+200);
+    
     noFill();
     strokeWeight(5);
     stroke(255);
