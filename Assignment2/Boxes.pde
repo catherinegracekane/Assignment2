@@ -7,7 +7,7 @@ class Boxes extends GameObject
   int a = 100;
   int j = (a/5);
   //boolean t = false;
-  int click = 0;
+
 
   Boxes(float x, float y)
   {
@@ -16,6 +16,7 @@ class Boxes extends GameObject
 
   void display()
   {
+
     rectMode(CORNER);
     fill(128); 
     stroke(0);
@@ -28,35 +29,34 @@ class Boxes extends GameObject
     for (int b = 20; b < a; b+=20)
     {
       line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
-    }
-
-
-
-    if (mousePressed && mouseX > pos.x && mouseX < (pos.x+j))
+    }  
+    
+        if (mousePressed && mouseX > pos.x && mouseX < (pos.x+j))
     {
 
-      click++; 
+      click++;
+    }
 
-      if (click == 1)
+    if (click == 1)
+    {
+      noFill();
+      stroke(245, 239, 57);
+      rect(this.pos.x, this.pos.y, a, a); 
+      fill(245, 239, 57);
+      rect(pos.x, pos.y, j, j);    
+      stroke(0);
+      line(pos.x, pos.y+j, pos.x+a, pos.y+j);
+      line(pos.x, pos.y+(j*4), pos.x+a, pos.y+(j*4));
+      for (int b = 20; b < a; b+=20)
       {
-        noFill();
-        stroke(245, 239, 57);
-        rect(this.pos.x, this.pos.y, a, a); 
-        fill(245, 239, 57);
-        rect(pos.x, pos.y, j, j);    
-        stroke(0);
-        line(pos.x, pos.y+j, pos.x+a, pos.y+j);
-        line(pos.x, pos.y+(j*4), pos.x+a, pos.y+(j*4));
-        for (int b = 20; b < a; b+=20)
-        {
-          line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
-        }
-
-        if (mousePressed)
-        {
-          click--;
-        }
+        line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
       }
+
+      if (mousePressed)
+      {
+        click--;
+      }
+
     }
   }
 }
