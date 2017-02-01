@@ -4,14 +4,19 @@
 class Boxes extends GameObject
 {
 
-  int a = 100;
-  int j = (a/5);
+  int a;
+  int j;
+  color col1; 
   //boolean t = false;
 
 
   Boxes(float x, float y)
   {
     pos = new PVector(x, y); //co-ordinates of the targets
+    a = 100;
+    j = (a/5);
+    col1 = color(0);
+    //col2 = color(204, 153, 0);
   }
 
   void display()
@@ -19,7 +24,7 @@ class Boxes extends GameObject
 
     rectMode(CORNER);
     fill(128); 
-    stroke(0);
+    stroke(col1);
     rect(pos.x, pos.y, a, a);
     fill(245, 239, 57);
     rect(pos.x, pos.y, j, j);    
@@ -30,36 +35,46 @@ class Boxes extends GameObject
     {
       line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
     }  
-    
-        if (mousePressed && mouseX > pos.x && mouseX < (pos.x+j))
+
+    if (mousePressed && mouseX > this.pos.x && mouseX < (this.pos.x+j))
     {
 
       click++;
     }
 
-    if (click == 1)
+    /*if (click == 1)
+     {
+     noFill();
+     stroke(col1);
+     rect(this.pos.x, this.pos.y, a, a); 
+     fill(245, 239, 57);
+     rect(this.pos.x, this.pos.y, j, j);    
+     stroke(0);
+     line(pos.x, pos.y+j, pos.x+a, pos.y+j);
+     line(pos.x, pos.y+(j*4), pos.x+a, pos.y+(j*4));
+     for (int b = 20; b < a; b+=20)
+     {
+     line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
+     }*/
+
+    if (mousePressed)
     {
-      noFill();
-      stroke(245, 239, 57);
-      rect(this.pos.x, this.pos.y, a, a); 
-      fill(245, 239, 57);
-      rect(pos.x, pos.y, j, j);    
-      stroke(0);
-      line(pos.x, pos.y+j, pos.x+a, pos.y+j);
-      line(pos.x, pos.y+(j*4), pos.x+a, pos.y+(j*4));
-      for (int b = 20; b < a; b+=20)
-      {
-        line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
-      }
-
-      if (mousePressed)
-      {
-        click--;
-      }
-
+      click--;
     }
+    
+
+}
   }
 }
+
+/*void     mouseClicked() {
+  if (click == 0) {
+   color col1 = color(0);
+  } else {
+    color col1 = color(245, 239, 57);
+  }*/
+
+
 
 /*
 so i need to use this logic 
