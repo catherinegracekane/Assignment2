@@ -40,9 +40,10 @@ class Boxes extends GameObject
     {
 
       click++;
+      col1 = color(245, 239, 57);
     }
 
-    /*if (click == 1)
+    if (click == 1)
      {
      noFill();
      stroke(col1);
@@ -55,11 +56,12 @@ class Boxes extends GameObject
      for (int b = 20; b < a; b+=20)
      {
      line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
-     }*/
+     }
 
-    if (mousePressed)
+    if (key == CODED && keyCode == DOWN)
     {
-      click--;
+      click = 0;
+      col1 = color(0);
     }
     
 
