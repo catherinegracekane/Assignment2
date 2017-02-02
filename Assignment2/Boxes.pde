@@ -7,6 +7,7 @@ class Boxes extends GameObject
   int a;
   int j;
   color col1; 
+  int click;
   //boolean t = false;
 
 
@@ -16,12 +17,29 @@ class Boxes extends GameObject
     a = 100;
     j = (a/5);
     col1 = color(0);
+    this.click = 0;
     //col2 = color(204, 153, 0);
   }
 
   void display()
   {
-
+    println(click);
+    println(click);
+    if(mousePressed && mouseX > this.pos.x && mousePressed && mouseX < (this.pos.x+15))
+    {
+      if(mousePressed && mouseY > this.pos.y && mousePressed && mouseY < (this.pos.y+15))
+      {
+        if(click == 1)
+        {
+          click = 0;
+          col1 = color(0);
+        }
+        
+      }
+    }
+    
+    if(click == 0)
+    {
     rectMode(CORNER);
     fill(128); 
     stroke(col1);
@@ -35,13 +53,20 @@ class Boxes extends GameObject
     {
       line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
     }  
-
+    }
+    
     if (mousePressed && mouseX > this.pos.x && mouseX < (this.pos.x+j))
     {
-
-      click++;
-      col1 = color(245, 239, 57);
+      if(mousePressed && mouseY > this.pos.y && mouseY < (this.pos.y+j))
+      {
+        if(click == 0)
+        {
+          click = 1;
+          col1 = color(245, 239, 57);
+        }
+      }
     }
+
 
     if (click == 1)
      {
@@ -57,12 +82,6 @@ class Boxes extends GameObject
      {
      line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
      }
-
-    if (key == CODED && keyCode == DOWN)
-    {
-      click = 0;
-      col1 = color(0);
-    }
     
 
 }

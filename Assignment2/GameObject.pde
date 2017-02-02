@@ -4,7 +4,6 @@ class GameObject
   
   GameObject()
   {
-    println("GO Default");
   }
   
   void display()

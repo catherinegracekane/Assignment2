@@ -4,7 +4,7 @@ Target t11, t12, t13, t14, t15, t16, t17;
 Boxes b11, b12, b13, b14, b15, b16, b17, b18;
 Splash splash;
 
-int click = 0;
+//int click = 0;
 int gameState = 0; //counter used to determine screen
 
 void setup() {
@@ -92,4 +92,11 @@ void draw() {
     println("Incorrect choice");
     break;
   }
+  
+  for(int i=0; i<gameObjects.size(); i++)
+  {
+    //If the gameObjects.get(i).pos.x and gameObjects.get(i).pos.y.
+    //Record the boxes state
+  }
+  
 }
