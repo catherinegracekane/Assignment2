@@ -6,28 +6,8 @@ class Boxes extends GameObject
 
   int a;
   int j;
-  color col1,col2; 
+  color col1, col2; 
   int click;
-
-  //only log the co-ordinates of target in box and change accordingly
-  //not using target!!
-
-  /*t11 = new Boxes(100, 0);
-   t12 = new Boxes(200, 200);
-   t13 = new Boxes(300, 200);
-   t14 = new Boxes(400, 300);
-   t15 = new Boxes(500, 200);
-   t16 = new Boxes(600, 300);
-   t17 = new Boxes(600, 400);*/
-
-  /*
-  
-   if(this.pos.x == 200 && this.pos.y == 200)
-   {
-      col2 = color(21,203,77);  
-   }
-   
-   */
 
   Boxes(float x, float y)
   {
@@ -44,7 +24,7 @@ class Boxes extends GameObject
   {
     println(click);
     println(click);
-   
+
     if (mousePressed && mouseX > this.pos.x && mousePressed && mouseX < (this.pos.x+15))
     {
       if (mousePressed && mouseY > this.pos.y && mousePressed && mouseY < (this.pos.y+15))
@@ -57,11 +37,12 @@ class Boxes extends GameObject
         }
       }
     }
-    
-   if(this.pos.x == 200 && this.pos.y == 200)
-   {
-      col2 = color(21,203,77);  
-   }
+
+    //all level 1 targets here
+    if (this.pos.x == 200 && this.pos.y == 200 || this.pos.x == 300 && this.pos.y == 200 || this.pos.x == 400 && this.pos.y == 300 || this.pos.x == 100 && this.pos.y == 0 || this.pos.x == 500 && this.pos.y == 200 || this.pos.x == 600 && this.pos.y == 300 || this.pos.x == 600 && this.pos.y == 400)
+    {
+      col2 = color(21, 203, 77);
+    }  
 
     if (click == 0)
     {
@@ -108,7 +89,6 @@ class Boxes extends GameObject
         line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
       }
     }
-    
   }
 }
 
