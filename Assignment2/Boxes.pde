@@ -3,6 +3,11 @@
 //there's a number of rules to be applied in order for their movement to be controlled
 class Boxes extends GameObject
 {
+  
+  /*
+  set up PVectors for each position on the board, if they click in that area, update the boxes
+  pvector to this position on the board
+  */
 
   int a;
   int j;
@@ -17,7 +22,6 @@ class Boxes extends GameObject
     col1 = color(0);
     col2 = color(245, 239, 57);
     this.click = 0;
-    //col2 = color(204, 153, 0);
   }
 
   void display()
@@ -37,6 +41,13 @@ class Boxes extends GameObject
         }
       }
     }
+    
+    /*
+    this code will move the object but clears all boxes, so need to fix this
+    if(mousePressed && mouseX > 0 && mouseY < 100)
+    {
+      this.pos.set(mouseX, mouseY);
+    }*/
 
     //all level 1 targets here
     if (this.pos.x == 200 && this.pos.y == 200 || this.pos.x == 300 && this.pos.y == 200 || this.pos.x == 400 && this.pos.y == 300 || this.pos.x == 100 && this.pos.y == 0 || this.pos.x == 500 && this.pos.y == 200 || this.pos.x == 600 && this.pos.y == 300 || this.pos.x == 600 && this.pos.y == 400)
