@@ -8,7 +8,7 @@ class Splash {
   Splash()
   {
     instructions = loadStrings("instructions.txt");
-    spacing = 49;
+    spacing = 50;
   }
 
   void display()
@@ -23,12 +23,25 @@ class Splash {
 
     textSize(24);
     text("Press Enter to Begin", (width/3), height/2+200);
-    
+
     noFill();
     strokeWeight(5);
     stroke(255);
     rect((width/2), (height/4), width/3, width/3);
+    
+    text("Click here for Instructions", 10, 20);
 
+    if(mousePressed && mouseX > 0 && mouseY < 50)
+    {
+    for (int i = 0; i < instructions.length; i+=5) {
+      for (int j = 0; j < (instructions.length*spacing); j+=spacing)
+      {
+        text(instructions[i], 50, 50+(j/2));
+        i = i+1;
+      }
+    }
+    }
+    
     if ( key == RETURN || key == ENTER)
     {
       gameState = gameState + 1;
