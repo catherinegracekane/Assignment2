@@ -38,6 +38,7 @@ class Boxes extends GameObject
           click = 0;
           col1 = color(0);
           col2 = color(245, 239, 57);
+          //this.pos.set(mouseX, mouseY); //this moves the boxes one at a time, but needs to move to correct points
         }
       }
     }
