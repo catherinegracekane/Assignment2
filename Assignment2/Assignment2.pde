@@ -22,6 +22,14 @@ void setup() {
   t15 = new Target(500, 200);
   t16 = new Target(600, 300);
   t17 = new Target(600, 400);
+  
+  /*t11 = new Boxes(100, 0);
+  t12 = new Boxes(200, 200);
+  t13 = new Boxes(300, 200);
+  t14 = new Boxes(400, 300);
+  t15 = new Boxes(500, 200);
+  t16 = new Boxes(600, 300);
+  t17 = new Boxes(600, 400);*/
 
   b11 = new Boxes(200, 100);
   b12 = new Boxes(300, 100);
@@ -39,6 +47,14 @@ void setup() {
   gameObjects.add(t15);
   gameObjects.add(t16);
   gameObjects.add(t17);
+  
+  /*boxes.add(t11);
+  boxes.add(t12);
+  boxes.add(t13);
+  boxes.add(t14);
+  boxes.add(t15);
+  boxes.add(t16);
+  boxes.add(t17);*/
 
   gameObjects.add(b11);
   gameObjects.add(b12);
@@ -54,6 +70,7 @@ void setup() {
 }
 
 ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
+ArrayList<Boxes> boxes = new ArrayList<Boxes>();
 
 void draw() {
 

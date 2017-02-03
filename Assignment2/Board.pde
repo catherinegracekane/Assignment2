@@ -26,7 +26,7 @@ class Board
     for ( float i = (pos.x - (boardW/2)); i < (pos.x + (boardH/2)); i += 100)
     {
       // x1, y1, x2, y2
-      line((pos.x - (boardW/2))+i, 0, (pos.x - (boardH/2))+i, 500);
+      line((pos.x - (boardW/2))+i, 0, (pos.x - (boardH/2))+i, height);
     }
 
     for ( float j = 0; j < height; j +=100)

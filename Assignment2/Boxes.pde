@@ -8,8 +8,9 @@ class Boxes extends GameObject
   int j;
   color col1; 
   int click;
-  //boolean t = false;
-
+  
+  //only log the co-ordinates of target in box and change accordingly
+  //not using target!!
 
   Boxes(float x, float y)
   {
@@ -83,7 +84,6 @@ class Boxes extends GameObject
      line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
      }
     
-
 }
   }
 }
