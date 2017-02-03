@@ -5,15 +5,55 @@ class Boxes extends GameObject
 {
   
   /*
-  set up PVectors for each position on the board, if they click in that area, update the boxes
+  set up PVectors for each position on the board they can move to, if they click in that area, update the boxes
   pvector to this position on the board
+  
+  do i need to take the distance from mouseX to these positions?
+  array list of pvectors, iterate through all and set according to board pos
+  100,0 100,100 outer for goes through x which is 100-500, inner for through y
+  which is 0-500 i+=100 j+=100
+  
+  this code is used to get objects, can i set pvectors
+    for (int i = gameObjects.size() -1 ; i >= 0  ; i --)
+  {
+    GameObject go = gameObjects.get(i); 
+    go.update();
+    go.render();    
+  }
+ArrayList<PVector> positions = new ArrayList<PVector>();  
+
+PVector poss = positions.set(psx, psy);
+
+  for(int psx = 100 ; psx < 600 ; psx += 100)
+  {
+    for(int psyy = 0 ; psy < 600 ; psy +=100)
+    {
+      PVector poss = positions.set(psx, psy);
+      println("hi");
+    }
+  }
+  
+  OR, the error is set(int, PVector), need to sort this
+  
+        for(float psx = 100.0 ; psx < 600.0 ; psx += 100.0)
+  {
+    for(float psy = 0.0 ; psy < 600.0 ; psy +=100.0)
+    {
+      PVector poss = this.positions.set(psx, psy);
+      println("hi");
+    }
+  }
+       
   */
 
   int a;
   int j;
   color col1, col2; 
   int click;
+  
+  ArrayList<PVector> positions = new ArrayList<PVector>();  
 
+  
   Boxes(float x, float y)
   {
     pos = new PVector(x, y); //co-ordinates of the targets
