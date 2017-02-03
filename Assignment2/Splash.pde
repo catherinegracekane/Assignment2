@@ -2,13 +2,14 @@
 
 class Splash {
 
-  int spacing;
+  int spacing, click;
   String[] instructions;
 
   Splash()
   {
     instructions = loadStrings("instructions.txt");
     spacing = 50;
+    click = 0;
   }
 
   void display()
@@ -28,20 +29,30 @@ class Splash {
     strokeWeight(5);
     stroke(255);
     rect((width/2), (height/4), width/3, width/3);
-    
+
     text("Click here for Instructions", 10, 20);
 
-    if(mousePressed && mouseX > 0 && mouseY < 50)
+
+   if (mousePressed && mouseX > 0 && mouseY < 50)
+   //if(key == CODED && keyCode == '1') //fix this when i have internet
     {
-    for (int i = 0; i < instructions.length; i+=5) {
-      for (int j = 0; j < (instructions.length*spacing); j+=spacing)
+      click++;
+
+      if (click > 0)
       {
-        text(instructions[i], 50, 50+(j/2));
-        i = i+1;
+        background(0);
+
+        for (int i = 0; i < instructions.length; i+=5)
+        {
+          for (int j = 0; j < (instructions.length*spacing); j+=spacing)
+          {
+            text(instructions[i], 50, 50+(j/2));
+            i = i+1;
+          }
+        }
       }
     }
-    }
-    
+
     if ( key == RETURN || key == ENTER)
     {
       gameState = gameState + 1;
