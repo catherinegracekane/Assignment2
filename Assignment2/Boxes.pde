@@ -3,57 +3,57 @@
 //there's a number of rules to be applied in order for their movement to be controlled
 class Boxes extends GameObject
 {
-  
+
   /*
   set up PVectors for each position on the board they can move to, if they click in that area, update the boxes
-  pvector to this position on the board
-  
-  do i need to take the distance from mouseX to these positions?
-  array list of pvectors, iterate through all and set according to board pos
-  100,0 100,100 outer for goes through x which is 100-500, inner for through y
-  which is 0-500 i+=100 j+=100
-  
-  this code is used to get objects, can i set pvectors
-    for (int i = gameObjects.size() -1 ; i >= 0  ; i --)
-  {
-    GameObject go = gameObjects.get(i); 
-    go.update();
-    go.render();    
-  }
-ArrayList<PVector> positions = new ArrayList<PVector>();  
-
-PVector poss = positions.set(psx, psy);
-
-  for(int psx = 100 ; psx < 600 ; psx += 100)
-  {
-    for(int psyy = 0 ; psy < 600 ; psy +=100)
-    {
-      PVector poss = positions.set(psx, psy);
-      println("hi");
-    }
-  }
-  
-  OR, the error is set(int, PVector), need to sort this
-  
-        for(float psx = 100.0 ; psx < 600.0 ; psx += 100.0)
-  {
-    for(float psy = 0.0 ; psy < 600.0 ; psy +=100.0)
-    {
-      PVector poss = this.positions.set(psx, psy);
-      println("hi");
-    }
-  }
-       
-  */
+   pvector to this position on the board
+   
+   do i need to take the distance from mouseX to these positions?
+   array list of pvectors, iterate through all and set according to board pos
+   100,0 100,100 outer for goes through x which is 100-500, inner for through y
+   which is 0-500 i+=100 j+=100
+   
+   this code is used to get objects, can i set pvectors
+   for (int i = gameObjects.size() -1 ; i >= 0  ; i --)
+   {
+   GameObject go = gameObjects.get(i); 
+   go.update();
+   go.render();    
+   }
+   ArrayList<PVector> positions = new ArrayList<PVector>();  
+   
+   PVector poss = positions.set(psx, psy);
+   
+   for(int psx = 100 ; psx < 600 ; psx += 100)
+   {
+   for(int psyy = 0 ; psy < 600 ; psy +=100)
+   {
+   PVector poss = positions.set(psx, psy);
+   println("hi");
+   }
+   }
+   
+   OR, the error is set(int, PVector), need to sort this
+   
+   for(float psx = 100.0 ; psx < 600.0 ; psx += 100.0)
+   {
+   for(float psy = 0.0 ; psy < 600.0 ; psy +=100.0)
+   {
+   PVector poss = this.positions.set(psx, psy);
+   println("hi");
+   }
+   }
+   
+   */
 
   int a;
   int j;
   color col1, col2; 
   int click;
-  
+
   ArrayList<PVector> positions = new ArrayList<PVector>();  
 
-  
+
   Boxes(float x, float y)
   {
     pos = new PVector(x, y); //co-ordinates of the targets
@@ -78,18 +78,13 @@ PVector poss = positions.set(psx, psy);
           click = 0;
           col1 = color(0);
           col2 = color(245, 239, 57);
-          //this.pos.set(mouseX, mouseY); //this moves the boxes one at a time, but needs to move to correct points
         }
       }
     }
     
-    /*
-    this code will move the object but clears all boxes, so need to fix this
-    if(mousePressed && mouseX > 0 && mouseY < 100)
-    {
-      this.pos.set(mouseX, mouseY);
-    }*/
-
+     
+     keyPressed();
+     
     //all level 1 targets here
     if (this.pos.x == 200 && this.pos.y == 200 || this.pos.x == 300 && this.pos.y == 200 || this.pos.x == 400 && this.pos.y == 300 || this.pos.x == 100 && this.pos.y == 0 || this.pos.x == 500 && this.pos.y == 200 || this.pos.x == 600 && this.pos.y == 300 || this.pos.x == 600 && this.pos.y == 400)
     {
@@ -142,7 +137,21 @@ PVector poss = positions.set(psx, psy);
       }
     }
   }
+  
+  void keyPressed() {
+    if (key == CODED && keyCode == RIGHT)
+    {
+      this.pos.set(mouseX+a, mouseY); //this moves the boxes one at a time, but needs to move to correct points
+    }
+
+    if (key == CODED && keyCode == DOWN)    
+    //if ( key == RETURN || key == ENTER)
+    {
+      this.pos.set(mouseX, mouseY+a); //this moves the boxes one at a time, but needs to move to correct points
+    }
+  }
 }
+
 
 /*void     mouseClicked() {
  if (click == 0) {
