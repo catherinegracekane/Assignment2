@@ -143,9 +143,15 @@ class Boxes extends GameObject
     {
       this.pos.set(mouseX+a, mouseY); //this moves the boxes one at a time, but needs to move to correct points
     }
-
+    if (key == CODED && keyCode == LEFT)
+    {
+      this.pos.set(mouseX-a, mouseY); //this moves the boxes one at a time, but needs to move to correct points
+    }
+    if (key == CODED && keyCode == UP)
+    {
+      this.pos.set(mouseX, mouseY-a); //this moves the boxes one at a time, but needs to move to correct points
+    }
     if (key == CODED && keyCode == DOWN)    
-    //if ( key == RETURN || key == ENTER)
     {
       this.pos.set(mouseX, mouseY+a); //this moves the boxes one at a time, but needs to move to correct points
     }
