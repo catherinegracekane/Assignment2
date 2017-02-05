@@ -104,6 +104,10 @@ void draw() {
     b18.display();
 
     break;
+    
+    case 2: 
+    splash.instructions();
+    break;
 
   default:
     println("Incorrect choice");

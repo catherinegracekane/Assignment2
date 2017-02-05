@@ -53,14 +53,21 @@ class Splash {
     text("1) Press Enter to Begin", (width/4), height/2+100);
     text("2) Click here for Instructions", (width/4), height/2+170);
 
-
     if (mousePressed && mouseX > 0 && mouseY < 50)
-      //if(key == CODED && keyCode == '1') //fix this when i have internet
+    //if(key == CODED && keyCode == '1') //fix this when i have internet
     {
-      click++;
+      gameState = 2;
+    }
 
-      if (click > 0)
-      {
+    if ( key == RETURN || key == ENTER)
+    {
+      gameState = gameState + 1;
+      fill(0);
+    }
+  }
+
+  void instructions() {
+
         background(0);
 
         for (int i = 0; i < instructions.length; i+=5)
@@ -71,27 +78,11 @@ class Splash {
             i = i+1;
           }
         }
-      }
-    }
-
-    click = 0;
-
-    if (click == 0)
-    {
-      for (int i = 0; i < instructions.length; i+=5)
+ 
+      if (key == TAB)
       {
-        for (int j = 0; j < (instructions.length*spacing); j+=spacing)
-        {
-          instructions = loadStrings("clear.txt");
-          i = i+1;
-        }
+        gameState = 0;
       }
-    }
-    
-    if ( key == RETURN || key == ENTER)
-    {
-      gameState = gameState + 1;
-      fill(0);
-    }
   }
+
 }//end of class
