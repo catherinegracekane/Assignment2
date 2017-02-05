@@ -78,11 +78,13 @@ void draw() {
   {
   case 0:
     //front screen
+    background(0);
     splash.display();
     break;
 
   case 1:
-
+    
+    background(0);
     board1.display();
     board1.level1();
 
@@ -105,7 +107,8 @@ void draw() {
 
     break;
     
-    case 2: 
+    case 2:
+    background(0);
     splash.instructions();
     break;
 
