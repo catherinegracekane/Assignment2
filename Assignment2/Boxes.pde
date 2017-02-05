@@ -157,21 +157,3 @@ class Boxes extends GameObject
     }
   }
 }
-
-
-/*void     mouseClicked() {
- if (click == 0) {
- color col1 = color(0);
- } else {
- color col1 = color(245, 239, 57);
- }*/
-
-
-
-/*
-so i need to use this logic 
- Player player0 = new Player(width / 2, height / 2, 0, 50, 'w', 's', 'a', 'd', ' ');
- so i need to have their positions when calling them in main
- Boxes box1 = new Boxes(x, y); 
- 
- */
