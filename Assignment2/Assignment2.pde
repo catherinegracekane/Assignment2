@@ -82,7 +82,7 @@ void draw() {
     splash.display();
     break;
 
-  case 1:
+  case 1: //<>//
     
     background(0);
     board1.display();
@@ -117,10 +117,5 @@ void draw() {
     break;
   }
   
-  for(int i=0; i<gameObjects.size(); i++)
-  {
-    //If the gameObjects.get(i).pos.x and gameObjects.get(i).pos.y.
-    //Record the boxes state
-  }
   
 }
