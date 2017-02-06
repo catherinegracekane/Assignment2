@@ -122,9 +122,9 @@ class Level1
   void play()
   {
     //case 1 = pair 1
-    if (mouseX > 150 && mouseX < pos.x && mouseY > 0 && mouseY < pos.y)
+    if (keyPressed)
     {
-      if (mousePressed)
+      if (key == '1')
       {
         click = 1;
         println("test1");
@@ -133,9 +133,9 @@ class Level1
       }
     }
     //case 2 = pair 2
-    if (mouseX > pos.x && mouseX < (pos.x + boardW/2) && mouseY > 0 && mouseY < pos.y)
+    if (keyPressed)
     {
-      if (mousePressed)
+      if (key == '2')
       {
         click = 2;
         println("test2");
@@ -143,9 +143,9 @@ class Level1
       }
     }
     //case 3 = pair1
-    if (mouseX > 150 && mouseX < pos.x && mouseY > pos.y && mouseY < height)
+    if (keyPressed)
     {
-      if (mousePressed)
+      if (key == '3')
       {
         click = 3;
         println("test3");
@@ -154,9 +154,9 @@ class Level1
       }
     }
     //case 4 = pair 2
-    if (mouseX > pos.x && mouseX < (pos.x + boardW/2) && mouseY > pos.y && mouseY < height)
+    if (keyPressed)
     {
-      if (mousePressed)
+      if (key == '4')
       {
         click = 4;
         println("test4");
@@ -190,5 +190,5 @@ class Level1
       pair2 = 4;
       click = 6;
     }
-  }
+    }
 }
