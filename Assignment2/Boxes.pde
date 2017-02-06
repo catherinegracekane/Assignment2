@@ -82,10 +82,10 @@ class Boxes //extends GameObject
         }
       }
     }
-    
-     
-     keyPressed();
-     
+
+
+    keyPressed();
+
     //all level 1 targets here
     if (this.pos.x == 200 && this.pos.y == 200 || this.pos.x == 300 && this.pos.y == 200 || this.pos.x == 400 && this.pos.y == 300 || this.pos.x == 100 && this.pos.y == 0 || this.pos.x == 500 && this.pos.y == 200 || this.pos.x == 600 && this.pos.y == 300 || this.pos.x == 600 && this.pos.y == 400)
     {
@@ -139,30 +139,30 @@ class Boxes //extends GameObject
       }
     }
   }
-  
-  void keyPressed() {
-     for(int i=0; i<boxes.size(); i++)
- {
-    //If the gameObjects.get(i).pos.x and gameObjects.get(i).pos.y.
-    //Record the boxes state
-   if( boxes.get(i).pos.x == this.pos.x && boxes.get(i).pos.y == this.pos.x)
-   if (key == CODED && keyCode == RIGHT)
-    {
-      this.pos.set(this.pos.x+a, this.pos.y); //this moves the boxes one at a time, but needs to move to correct points
-    }
-    if (key == CODED && keyCode == LEFT)
-    {
-      this.pos.set(this.pos.x-a, this.pos.y); //this moves the boxes one at a time, but needs to move to correct points
-    }
-    if (key == CODED && keyCode == UP)
-    {
-      this.pos.set(this.pos.x, this.pos.y-a); //this moves the boxes one at a time, but needs to move to correct points
-    }
-    if (key == CODED && keyCode == DOWN)    
-    {
-      this.pos.set(this.pos.x, this.pos.y+a); //this moves the boxes one at a time, but needs to move to correct points
-    }
-  }
-  }
 
+  void keyPressed() {
+   
+    for (int i=0; i<boxes.size(); i++)
+    {
+
+      if ( boxes.get(i).pos.x == this.pos.x && boxes.get(i).pos.y == this.pos.x)
+
+        if (key == CODED && keyCode == RIGHT)
+        {
+          this.pos.set(boxes.get(i).pos.x+a, boxes.get(i).pos.y); //this moves the boxes one at a time, but needs to move to correct points
+        }
+      if (key == CODED && keyCode == LEFT)
+      {
+        this.pos.set(boxes.get(i).pos.x-a, boxes.get(i).pos.y); //this moves the boxes one at a time, but needs to move to correct points
+      }
+      if (key == CODED && keyCode == UP)
+      {
+        this.pos.set(boxes.get(i).pos.x, boxes.get(i).pos.y-a); //this moves the boxes one at a time, but needs to move to correct points
+      }
+      if (key == CODED && keyCode == DOWN)    
+      {
+        this.pos.set(boxes.get(i).pos.x, boxes.get(i).pos.y+a); //this moves the boxes one at a time, but needs to move to correct points
+      }
+    }
   }
+}
