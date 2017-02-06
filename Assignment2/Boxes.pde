@@ -115,6 +115,7 @@ class Boxes extends GameObject
         if (click == 0)
         {
           click = 1;
+          selected = this;
           col1 = color(245, 239, 57);
         }
       }
@@ -139,11 +140,11 @@ class Boxes extends GameObject
   }
   
   void keyPressed() {
-      for(int i=0; i<gameObjects.size(); i++)
-  {
+     // for(int i=0; i<gameObjects.size(); i++)
+ // {
     //If the gameObjects.get(i).pos.x and gameObjects.get(i).pos.y.
     //Record the boxes state
-    if( gameObjects.get(i).pos.x  && gameObjects.get(i).pos.y == this.pos.x && this.pos.y)
+    //if( gameObjects.get(i).pos.x  && gameObjects.get(i).pos.y == this.pos.x && this.pos.y)
    if (key == CODED && keyCode == RIGHT)
     {
       this.pos.set(this.pos.x+a, this.pos.y); //this moves the boxes one at a time, but needs to move to correct points
@@ -160,7 +161,7 @@ class Boxes extends GameObject
     {
       this.pos.set(this.pos.x, this.pos.y+a); //this moves the boxes one at a time, but needs to move to correct points
     }
+  //}
   }
-  
 
   }

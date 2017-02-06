@@ -17,5 +17,6 @@ class Target extends GameObject
     stroke(18, 252, 231);
     line(pos.x, pos.y, pos.x+a, pos.y+a);
     line(pos.x+a, pos.y, pos.x, pos.y+a);
+
   }
 }

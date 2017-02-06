@@ -7,6 +7,8 @@ Splash splash;
 //int click = 0;
 int gameState = 0; //counter used to determine screen
 
+Boxes selected;
+
 void setup() {
 
   size(800, 600, P2D);
@@ -118,4 +120,12 @@ void draw() {
   }
   
   
+}
+
+void keyPressed()
+{
+  if(gameState == 1 && selected != null)
+  {
+    selected.keyPressed();
+  }
 }
