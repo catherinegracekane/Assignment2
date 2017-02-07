@@ -57,12 +57,12 @@ void setup() {
   boxes.add(b18);
 
   //level 2 targets and boxes, coded as t21 and b21 meaning box and target level 2 and box/target 1
-  t21 = new Target(100, 0);
-  t22 = new Target(200, 200);
+  t21 = new Target(100, 100);
+  t22 = new Target(200, 400);
   t23 = new Target(300, 200);
   t24 = new Target(400, 300);
   t25 = new Target(500, 200);
-  t26 = new Target(600, 300);
+  t26 = new Target(600, 500);
   t27 = new Target(600, 400);
   
   b21 = new Boxes(200, 100, 'i', 'm', 'j', 'k');
@@ -134,7 +134,7 @@ void draw() {
     break;
     
   case 3:
-  
+     
     for (GameObject t2 : gameObjects2)
     {
       t2.display();
@@ -143,6 +143,7 @@ void draw() {
     {
       b2.display();
     }
+    println("level 2");
 
   default:
     println("Incorrect choice");

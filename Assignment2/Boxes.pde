@@ -85,6 +85,7 @@ class Boxes extends GameObject
       }
       keyPressed();
     }
+    
   }
 
   void keyPressed() {
@@ -116,63 +117,73 @@ class Boxes extends GameObject
     //}
   }
   
-  void level1 () {
-        //all level 1 targets here
+  void level1 ( ) {
+    
+    //all level 1 targets here
     if (this.pos.x == 200 && this.pos.y == 200)
     {
       col2 = color(21, 203, 77);
-      score += 2;
+      score = 2;
       click = 0;
       col1 = color(0);
     } 
     if (this.pos.x == 300 && this.pos.y == 200)
     {
       col2 = color(21, 203, 77);
-      score += 2;
+      score = score + 2;
       click = 0;
       col1 = color(0);
     }    
     if (this.pos.x == 400 && this.pos.y == 300)
     {
       col2 = color(21, 203, 77);
-      score += 2;
+      score = 2;
       click = 0;
       col1 = color(0);
     }     
     if ( this.pos.x == 100 && this.pos.y == 0)
     {
       col2 = color(21, 203, 77);
-      score += 2;
+      score = 2;
       click = 0;
       col1 = color(0);
     }
     if (this.pos.x == 500 && this.pos.y == 200)
     {
       col2 = color(21, 203, 77);
-      score += 2;
+      score = 2;
       click = 0;
       col1 = color(0);
     }
     if (this.pos.x == 500 && this.pos.y == 300)
     {
       col2 = color(21, 203, 77);
-      score += 2;
+      score = 2;
       click = 0;
       col1 = color(0);
     }
     if (this.pos.x == 600 && this.pos.y == 300)
     {
       col2 = color(21, 203, 77);
-      score += 2;
+      score = 2;
       click = 0;
       col1 = color(0);
     }
     if (this.pos.x == 600 && this.pos.y == 400)
     {
       col2 = color(21, 203, 77);
-      score += 2;
+      score = 2;
       click = 0;
       col1 = color(0);
     }
+    
+    println("This is the score " + score, 0, 200);
+    
+    if(key == TAB )
+    {
+      gameState = 3;
+    }
+
+     
   }
 }
