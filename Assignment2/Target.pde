@@ -23,8 +23,7 @@ class Target extends GameObject
   
   void level2()
   {
-    for( int i = 0; i < gameObjects2.size() - 1 ; i++)
-    {
+    
       rectMode(CORNER);
       fill(155,145,41);
       stroke(0);
@@ -32,6 +31,6 @@ class Target extends GameObject
       stroke(255);
       fill(255);
       ellipse(this.pos.x+50, this.pos.y+50, 20, 20);
-    }
   }
+
 }

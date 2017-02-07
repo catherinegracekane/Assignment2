@@ -92,6 +92,8 @@ void setup() {
   boxes2.add(b27);
   
  //level 3 targets and boxes, coded as t31 and b31 meaning box and target level 3 and box/target 1
+  if(gameState == 4)
+  {
   t31 = new Target(300, 100);
   t32 = new Target(200, 400);
   t33 = new Target(300, 200);
@@ -127,6 +129,7 @@ void setup() {
   boxes3.add(b36);
   boxes3.add(b37);
   boxes3.add(b38);  
+  }
   
   font = loadFont("ChalkboardSE-Bold-48.vlw");
   textFont(font, 18);
@@ -171,26 +174,19 @@ void draw() {
     break;
 
   case 2:
-    clear();
     background(0);
     splash.instructions();
     break;
     
   case 3:
      
-    clear();
+    gameObjects.clear();
     background(0);
     board1.level2();
-    
-    for(int i = gameObjects.size()-1; i >= 0 ; i--)
-    {
-        gameObjects.remove(this);
-        i--;
-    }
-    
+       
     for (GameObject t2 : gameObjects2)
     {
-      t2.display();
+      t2.level2();
     }
     
     for (Boxes b2 : boxes2) 
