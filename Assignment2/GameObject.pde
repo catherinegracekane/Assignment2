@@ -1,6 +1,7 @@
 class GameObject
 {
   PVector pos;
+  int a; //area
   
   GameObject()
   { 

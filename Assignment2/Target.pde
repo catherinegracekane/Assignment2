@@ -1,11 +1,11 @@
 class Target extends GameObject
 {
   
-  int a = 95;
-  
+
   Target(float x, float y)
   {
     pos = new PVector(x, y); //co-ordinates of the targets
+    a = 95;
   }
   
   void display()

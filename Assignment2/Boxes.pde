@@ -1,10 +1,10 @@
 //These are box objects to be moved around until all boxes sit in target place
 //They will be created in the same way player was created in YASC however
 //there's a number of rules to be applied in order for their movement to be controlled
-class Boxes //extends GameObject
+class Boxes extends GameObject
 {
   PVector pos;
-  int a, i, score, total;
+  int i;
   float z;
   int j;
   color col1, col2; 
@@ -25,8 +25,7 @@ class Boxes //extends GameObject
     this.right = right;
     this.up = up;
     this.down = down;
-    score= 0;
-    total = 0;
+    total = total + score;
   }
 
   void display()
@@ -35,64 +34,9 @@ class Boxes //extends GameObject
     println(click);
 
     textSize(12);
-    text("Score: " + score, 0, 50);
-    /* if (mousePressed && mouseX > this.pos.x && mousePressed && mouseX < (this.pos.x+15))
-     {
-     if (mousePressed && mouseY > this.pos.y && mousePressed && mouseY < (this.pos.y+15))
-     {
-     if (click == 1)
-     {
-     click = 0;
-     col1 = color(0);
-     col2 = color(245, 239, 57);
-     }
-     }
-     }*/
+    text("Score: " + total, 0, 50);
 
-    //all level 1 targets here
-    if (this.pos.x == 200 && this.pos.y == 200)
-    {
-      col2 = color(21, 203, 77);
-      score = 2;
-      click = 0;
-    } 
-    if (this.pos.x == 300 && this.pos.y == 200)
-    {
-      col2 = color(21, 203, 77);
-      score = 2;
-      click = 0;
-    }    
-    if (this.pos.x == 400 && this.pos.y == 300)
-    {
-      col2 = color(21, 203, 77);
-      score = 2;
-      click = 0;
-    }     
-    if ( this.pos.x == 100 && this.pos.y == 0)
-    {
-      col2 = color(21, 203, 77);
-      score = score + 2;
-      click = 0;
-    }
-    if (this.pos.x == 500 && this.pos.y == 200)
-    {
-      col2 = color(21, 203, 77);
-      score = 2;
-      click = 0;
-    }
-    if (this.pos.x == 600 && this.pos.y == 300)
-    {
-      col2 = color(21, 203, 77);
-      score = 2;
-      click = 0;
-    }
-    if (this.pos.x == 600 && this.pos.y == 400)
-    {
-      col2 = color(21, 203, 77);
-      score = 2;
-      click = 0;
-    }
-
+    level1();
 
     if (click == 0)
     {
@@ -170,5 +114,65 @@ class Boxes //extends GameObject
         }
      // }
     //}
+  }
+  
+  void level1 () {
+        //all level 1 targets here
+    if (this.pos.x == 200 && this.pos.y == 200)
+    {
+      col2 = color(21, 203, 77);
+      score += 2;
+      click = 0;
+      col1 = color(0);
+    } 
+    if (this.pos.x == 300 && this.pos.y == 200)
+    {
+      col2 = color(21, 203, 77);
+      score += 2;
+      click = 0;
+      col1 = color(0);
+    }    
+    if (this.pos.x == 400 && this.pos.y == 300)
+    {
+      col2 = color(21, 203, 77);
+      score += 2;
+      click = 0;
+      col1 = color(0);
+    }     
+    if ( this.pos.x == 100 && this.pos.y == 0)
+    {
+      col2 = color(21, 203, 77);
+      score += 2;
+      click = 0;
+      col1 = color(0);
+    }
+    if (this.pos.x == 500 && this.pos.y == 200)
+    {
+      col2 = color(21, 203, 77);
+      score += 2;
+      click = 0;
+      col1 = color(0);
+    }
+    if (this.pos.x == 500 && this.pos.y == 300)
+    {
+      col2 = color(21, 203, 77);
+      score += 2;
+      click = 0;
+      col1 = color(0);
+    }
+    if (this.pos.x == 600 && this.pos.y == 300)
+    {
+      col2 = color(21, 203, 77);
+      score += 2;
+      click = 0;
+      col1 = color(0);
+    }
+    if (this.pos.x == 600 && this.pos.y == 400)
+    {
+      col2 = color(21, 203, 77);
+      score += 2;
+      click = 0;
+      col1 = color(0);
+    }
   }
 }

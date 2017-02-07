@@ -1,11 +1,13 @@
 PFont font; //<>//
 Board board1; //this is a 600x600 board
-Target t11, t12, t13, t14, t15, t16, t17;
+Target t11, t12, t13, t14, t15, t16, t17, t18;
 Boxes b11, b12, b13, b14, b15, b16, b17, b18;
 Splash splash;
 
 //int click = 0;
 int gameState = 0; //counter used to determine screen
+int score = 0;
+int total = 0;
 
 Boxes selected;
 
@@ -13,7 +15,7 @@ void setup() {
 
   size(800, 600, P2D);
   background(0);
-
+  
   splash = new Splash();
   board1 = new Board();
 
@@ -24,7 +26,8 @@ void setup() {
   t15 = new Target(500, 200);
   t16 = new Target(600, 300);
   t17 = new Target(600, 400);
-
+  t18 = new Target(500, 300);
+  
   b11 = new Boxes(200, 100, 'i', 'm', 'j', 'k');
   b12 = new Boxes(300, 100, 'i', 'm', 'j', 'k');
   b13 = new Boxes(200, 200, 'i', 'm', 'j', 'k');
@@ -41,7 +44,8 @@ void setup() {
   gameObjects.add(t15);
   gameObjects.add(t16);
   gameObjects.add(t17);
-
+  gameObjects.add(t18);
+  
   boxes.add(b11);
   boxes.add(b12);
   boxes.add(b13);
