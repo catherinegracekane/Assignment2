@@ -27,7 +27,7 @@ class Target extends GameObject
     stroke(0);
     rect(pos.x, pos.y, 100, 100);
     stroke(255);
-    textSize(12);
-    text("?", pos.x+(a/2), pos.y+(a/2));
+    fill(255);
+    ellipse(pos.x+50, pos.y+50, 20, 20);
   }
 }
