@@ -5,6 +5,7 @@ class Boxes //extends GameObject
 {
   PVector pos;
   int a, i;
+  float z;
   int j;
   color col1, col2; 
   int click;
@@ -19,7 +20,7 @@ class Boxes //extends GameObject
     col2 = color(245, 239, 57);
     this.click = 0;
     i = 0;
-    
+    z = 100/60;
     this.left = left;
     this.right = right;
     this.up = up;
@@ -83,7 +84,7 @@ class Boxes //extends GameObject
 
     if (click == 1)
     {
-      noFill();
+      fill(128);
       stroke(col1);
       rect(this.pos.x, this.pos.y, a, a); 
       fill(col2);
@@ -102,22 +103,24 @@ class Boxes //extends GameObject
   }
 
   void keyPressed() {
- 
+    
+    //frameRate(1);
+    
     if (checkKey(up))
     {
-        this.pos.set(this.pos.x, this.pos.y-a); //this moves the boxes one at a time, but needs to move to correct points
+        this.pos.set(this.pos.x, this.pos.y-z); //this moves the boxes one at a time, but needs to move to correct points
     }
     if (checkKey(down))
     {
-        this.pos.set(this.pos.x, this.pos.y+a);     
+        this.pos.set(this.pos.x, this.pos.y+z);     
     }
     if (checkKey(left))  
     {
-        this.pos.set(this.pos.x-a, this.pos.y); 
+        this.pos.set(this.pos.x-z, this.pos.y); 
     }
     if (checkKey(right))
     {
-        this.pos.set(this.pos.x+a, this.pos.y);
+        this.pos.set(this.pos.x+z, this.pos.y);
     }
 
   }

@@ -25,14 +25,14 @@ void setup() {
   t16 = new Target(600, 300);
   t17 = new Target(600, 400);
 
-  b11 = new Boxes(200, 100, 'i', 'k', 'j', 'm');
-  b12 = new Boxes(300, 100, 'i', 'k', 'j', 'm');
-  b13 = new Boxes(200, 200, 'i', 'k', 'j', 'm');
-  b14 = new Boxes(200, 300, 'i', 'k', 'j', 'm');
-  b15 = new Boxes(400, 300, 'i', 'k', 'j', 'm');
-  b16 = new Boxes(500, 300, 'i', 'k', 'j', 'm');
-  b17 = new Boxes(500, 400, 'i', 'k', 'j', 'm');
-  b18 = new Boxes(500, 500, 'i', 'k', 'j', 'm');
+  b11 = new Boxes(200, 100, 'i', 'm', 'j', 'k');
+  b12 = new Boxes(300, 100, 'i', 'm', 'j', 'k');
+  b13 = new Boxes(200, 200, 'i', 'm', 'j', 'k');
+  b14 = new Boxes(200, 300, 'i', 'm', 'j', 'k');
+  b15 = new Boxes(400, 300, 'i', 'm', 'j', 'k');
+  b16 = new Boxes(500, 300, 'i', 'm', 'j', 'k');
+  b17 = new Boxes(500, 400, 'i', 'm', 'j', 'k');
+  b18 = new Boxes(500, 500, 'i', 'm', 'j', 'k');
 
   gameObjects.add(t11);
   gameObjects.add(t12);
