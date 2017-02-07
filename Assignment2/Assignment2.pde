@@ -25,14 +25,14 @@ void setup() {
   t16 = new Target(600, 300);
   t17 = new Target(600, 400);
 
-  b11 = new Boxes(200, 100);
-  b12 = new Boxes(300, 100);
-  b13 = new Boxes(200, 200);
-  b14 = new Boxes(200, 300);
-  b15 = new Boxes(400, 300);
-  b16 = new Boxes(500, 300);
-  b17 = new Boxes(500, 400);
-  b18 = new Boxes(500, 500);
+  b11 = new Boxes(200, 100, 'i', 'k', 'j', 'm');
+  b12 = new Boxes(300, 100, 'i', 'k', 'j', 'm');
+  b13 = new Boxes(200, 200, 'i', 'k', 'j', 'm');
+  b14 = new Boxes(200, 300, 'i', 'k', 'j', 'm');
+  b15 = new Boxes(400, 300, 'i', 'k', 'j', 'm');
+  b16 = new Boxes(500, 300, 'i', 'k', 'j', 'm');
+  b17 = new Boxes(500, 400, 'i', 'k', 'j', 'm');
+  b18 = new Boxes(500, 500, 'i', 'k', 'j', 'm');
 
   gameObjects.add(t11);
   gameObjects.add(t12);
@@ -57,6 +57,7 @@ void setup() {
 
 ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
 ArrayList<Boxes> boxes = new ArrayList<Boxes>();
+boolean[] keys = new boolean[1000];
 
 void draw() {
 
@@ -96,10 +97,29 @@ void draw() {
   }
 }
 
-void keyPressed()
+/*void keyPressed()
 {
   if (gameState == 1 && selected != null)
   {
     selected.keyPressed();
   }
+}*/
+
+void keyPressed()
+{ 
+  keys[keyCode] = true;
+}
+ 
+void keyReleased()
+{
+  keys[keyCode] = false; 
+}
+
+boolean checkKey(int k)
+{
+  if (keys.length >= k) 
+  {
+    return keys[k] || keys[Character.toUpperCase(k)];  
+  }
+  return false;
 }
