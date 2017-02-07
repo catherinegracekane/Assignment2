@@ -10,4 +10,7 @@ class GameObject
   void display()
   {}
   
+  void level2()
+  {}
+  
 }

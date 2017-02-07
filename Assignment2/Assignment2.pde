@@ -183,7 +183,7 @@ void draw() {
     
     for (GameObject t2 : gameObjects2)
     {
-      t2.display();
+      t2.level2();
     }
     for (Boxes b2 : boxes2) 
     {
