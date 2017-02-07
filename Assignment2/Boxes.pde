@@ -10,6 +10,7 @@ class Boxes extends GameObject
   color col1, col2; 
   int click;
   char up, down, left, right;
+  boolean inc = false;
 
   Boxes(float x, float y, char up, char down, char left, char right)
   {
@@ -34,7 +35,7 @@ class Boxes extends GameObject
     println(click);
 
     textSize(12);
-    text("Score: " + total, 0, 50);
+    text("Score: " + score, 0, 50);
 
     level1();
 
@@ -123,67 +124,164 @@ class Boxes extends GameObject
     if (this.pos.x == 200 && this.pos.y == 200)
     {
       col2 = color(21, 203, 77);
-      score = 2;
       click = 0;
       col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 2;
+        inc = true;
+      }
     } 
     if (this.pos.x == 300 && this.pos.y == 200)
     {
       col2 = color(21, 203, 77);
-      score = score + 2;
       click = 0;
       col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 2;
+        inc = true;
+      }
     }    
     if (this.pos.x == 400 && this.pos.y == 300)
     {
       col2 = color(21, 203, 77);
-      score = 2;
       click = 0;
       col1 = color(0);
-    }     
+     
+      if(inc == false)
+      {
+        score = score + 2;
+        inc = true;
+      }
+    } 
+    
     if ( this.pos.x == 100 && this.pos.y == 0)
     {
       col2 = color(21, 203, 77);
-      score = 2;
       click = 0;
       col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 2;
+        inc = true;
+      }
     }
     if (this.pos.x == 500 && this.pos.y == 200)
     {
       col2 = color(21, 203, 77);
-      score = 2;
       click = 0;
       col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 2;
+        inc = true;
+      }
     }
     if (this.pos.x == 500 && this.pos.y == 300)
     {
       col2 = color(21, 203, 77);
-      score = 2;
       click = 0;
       col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 2;
+        inc = true;
+      }
     }
+    
     if (this.pos.x == 600 && this.pos.y == 300)
     {
       col2 = color(21, 203, 77);
-      score = 2;
       click = 0;
       col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 2;
+        inc = true;
+      }
     }
     if (this.pos.x == 600 && this.pos.y == 400)
     {
       col2 = color(21, 203, 77);
-      score = 2;
       click = 0;
       col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 2;
+        inc = true;
+      }
     }
     
     println("This is the score " + score, 0, 200);
     
-    if(key == TAB )
+    if(score == 16 || key == TAB)
     {
-      gameState = 3;
+      text("Press tab to proceed to the next level", 0, 250);
+      
+      if(key == TAB )
+      {
+        gameState = 3;
+      }
+    }   
+  }
+  
+  void level2(){
+    
+    if (click == 0)
+    {
+      rectMode(CORNER);
+      fill(128); 
+      stroke(col1);
+      rect(pos.x, pos.y, a, a);
+      fill(col2);
+      rect(pos.x, pos.y, j, j);    
+      stroke(0);
+      line(pos.x, pos.y+j, pos.x+a, pos.y+j);
+      line(pos.x, pos.y+(j*4), pos.x+a, pos.y+(j*4));
+      for (int b = 20; b < a; b+=20)
+      {
+        line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
+      }
     }
 
-     
+    if (mousePressed && mouseX > this.pos.x && mouseX < (this.pos.x+j))
+    {
+      if (mousePressed && mouseY > this.pos.y && mouseY < (this.pos.y+j))
+      {
+        if (click == 0)
+        {
+          click = 1;
+          selected = this;
+          col1 = color(245, 239, 57);
+        }
+      }
+    }
+
+
+    if (click == 1)
+    {
+      fill(128);
+      stroke(col1);
+      rect(this.pos.x, this.pos.y, a, a); 
+      fill(col2);
+      rect(this.pos.x, this.pos.y, j, j);    
+      stroke(0);
+      line(pos.x, pos.y+j, pos.x+a, pos.y+j);
+      line(pos.x, pos.y+(j*4), pos.x+a, pos.y+(j*4));
+      for (int b = 20; b < a; b+=20)
+      {
+        line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
+      }
+      keyPressed();
+    }
+    
   }
 }

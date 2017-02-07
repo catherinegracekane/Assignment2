@@ -59,21 +59,21 @@ void setup() {
   boxes.add(b18);
 
   //level 2 targets and boxes, coded as t21 and b21 meaning box and target level 2 and box/target 1
-  t21 = new Target(300, 100);
-  t22 = new Target(200, 400);
-  t23 = new Target(300, 200);
-  t24 = new Target(600, 300);
-  t25 = new Target(500, 200);
-  t26 = new Target(600, 500);
-  t27 = new Target(600, 400);
+  t21 = new Target(300, 500);
+  t22 = new Target(300, 600);
+  t23 = new Target(200, 200);
+  t24 = new Target(100, 400);
+  t25 = new Target(500, 100);
+  t26 = new Target(600, 200);
+  t27 = new Target(200, 100);
   
   b21 = new Boxes(200, 100, 'i', 'm', 'j', 'k');
-  b22 = new Boxes(300, 100, 'i', 'm', 'j', 'k');
-  b23 = new Boxes(200, 200, 'i', 'm', 'j', 'k');
-  b24 = new Boxes(200, 300, 'i', 'm', 'j', 'k');
+  b22 = new Boxes(200, 200, 'i', 'm', 'j', 'k');
+  b23 = new Boxes(400, 200, 'i', 'm', 'j', 'k');
+  b24 = new Boxes(400, 300, 'i', 'm', 'j', 'k');
   b25 = new Boxes(400, 300, 'i', 'm', 'j', 'k');
   b26 = new Boxes(500, 300, 'i', 'm', 'j', 'k');
-  b27 = new Boxes(500, 400, 'i', 'm', 'j', 'k');
+  b27 = new Boxes(600, 100, 'i', 'm', 'j', 'k');
 
   gameObjects2.add(t21);
   gameObjects2.add(t22);
@@ -171,6 +171,7 @@ void draw() {
     break;
 
   case 2:
+    clear();
     background(0);
     splash.instructions();
     break;
@@ -181,14 +182,22 @@ void draw() {
     background(0);
     board1.level2();
     
+    for(int i = gameObjects.size()-1; i >= 0 ; i--)
+    {
+        gameObjects.remove(this);
+        i--;
+    }
+    
     for (GameObject t2 : gameObjects2)
     {
-      t2.level2();
+      t2.display();
     }
+    
     for (Boxes b2 : boxes2) 
     {
-      b2.display();
+      b2.level2();
     }
+    
     println("level 2");
     
     break;
