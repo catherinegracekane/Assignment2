@@ -1,7 +1,9 @@
 PFont font; //<>//
 Board board1; //this is a 600x600 board
 Target t11, t12, t13, t14, t15, t16, t17, t18, t21, t22, t23, t24, t25, t26, t27;
+Target t31, t32, t33, t34, t35, t36, t37, t38;
 Boxes b11, b12, b13, b14, b15, b16, b17, b18, b21, b22, b23, b24, b25, b26,b27;
+Boxes b31, b32, b33, b34, b35, b36, b37, b38;
 Splash splash;
 
 //int click = 0;
@@ -57,10 +59,10 @@ void setup() {
   boxes.add(b18);
 
   //level 2 targets and boxes, coded as t21 and b21 meaning box and target level 2 and box/target 1
-  t21 = new Target(100, 100);
+  t21 = new Target(300, 100);
   t22 = new Target(200, 400);
   t23 = new Target(300, 200);
-  t24 = new Target(400, 300);
+  t24 = new Target(600, 300);
   t25 = new Target(500, 200);
   t26 = new Target(600, 500);
   t27 = new Target(600, 400);
@@ -89,15 +91,55 @@ void setup() {
   boxes2.add(b26);
   boxes2.add(b27);
   
+ //level 3 targets and boxes, coded as t31 and b31 meaning box and target level 3 and box/target 1
+  t31 = new Target(300, 100);
+  t32 = new Target(200, 400);
+  t33 = new Target(300, 200);
+  t34 = new Target(600, 300);
+  t35 = new Target(500, 200);
+  t36 = new Target(600, 500);
+  t37 = new Target(600, 400);
+  t38 = new Target(600, 400);
+  
+  b31 = new Boxes(200, 100, 'i', 'm', 'j', 'k');
+  b32 = new Boxes(300, 100, 'i', 'm', 'j', 'k');
+  b33 = new Boxes(200, 200, 'i', 'm', 'j', 'k');
+  b34 = new Boxes(200, 300, 'i', 'm', 'j', 'k');
+  b35 = new Boxes(400, 300, 'i', 'm', 'j', 'k');
+  b36 = new Boxes(500, 300, 'i', 'm', 'j', 'k');
+  b37 = new Boxes(500, 400, 'i', 'm', 'j', 'k');
+  b38 = new Boxes(500, 400, 'i', 'm', 'j', 'k');
+  
+  gameObjects2.add(t31);
+  gameObjects2.add(t32);
+  gameObjects2.add(t33);
+  gameObjects2.add(t34);
+  gameObjects2.add(t35);
+  gameObjects2.add(t36);
+  gameObjects2.add(t37);
+  gameObjects2.add(t38);
+  
+  boxes3.add(b31);
+  boxes3.add(b32);
+  boxes3.add(b33);
+  boxes3.add(b34);
+  boxes3.add(b35);
+  boxes3.add(b36);
+  boxes3.add(b37);
+  boxes3.add(b38);  
+  
   font = loadFont("ChalkboardSE-Bold-48.vlw");
   textFont(font, 18);
 }
-
+//level 1
 ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
 ArrayList<Boxes> boxes = new ArrayList<Boxes>();
-
+//level 2
 ArrayList<GameObject> gameObjects2 = new ArrayList<GameObject>();
 ArrayList<Boxes> boxes2 = new ArrayList<Boxes>();
+//level 3
+ArrayList<GameObject> gameObjects3 = new ArrayList<GameObject>();
+ArrayList<Boxes> boxes3 = new ArrayList<Boxes>();
 
 boolean[] keys = new boolean[1000];
 
@@ -135,6 +177,10 @@ void draw() {
     
   case 3:
      
+    clear();
+    background(0);
+    board1.level2();
+    
     for (GameObject t2 : gameObjects2)
     {
       t2.display();
@@ -144,6 +190,26 @@ void draw() {
       b2.display();
     }
     println("level 2");
+    
+    break;
+    
+   case 4:
+     
+    clear();
+    background(0);
+    board1.level2();
+    
+    for (GameObject t3 : gameObjects3)
+    {
+      t3.display();
+    }
+    for (Boxes b3 : boxes3) 
+    {
+      b3.display();
+    }
+    println("level 3");
+    
+    break;
 
   default:
     println("Incorrect choice");

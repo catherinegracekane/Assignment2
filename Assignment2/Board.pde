@@ -14,7 +14,7 @@ class Board
 
   void display()
   {
-    
+
     fill(255);
     rectMode(CENTER);
     rect(pos.x, pos.y, boardW, boardH, 5);  
@@ -36,20 +36,45 @@ class Board
       //j = j+100;
     }
   }
-    
-    void level1()
+
+  void level1()
+  {
+    //this is used to block out areas the boxes can't move through
+    fill(0);
+    rect((width/2)+100, 0, 200, 200); //top 2 black squares 
+    rect(100, height-50, 400, 100);   //bottom black squares
+
+    noFill();
+    strokeWeight(8);
+    //stroke(98,79,49);
+    stroke(#2EAFF2);
+    rectMode(CENTER);
+    rect(pos.x, pos.y, boardW+20, boardH, 5);  
+    strokeWeight(3);
+  }
+
+  void level2()
+  {
+
+    fill(23, 30, 224 );
+    rectMode(CENTER);
+    rect(pos.x, pos.y, boardW, boardH, 5);  
+
+    //create a grid
+    stroke(0);
+    strokeWeight(3);
+    //vertical grid
+    for ( float i = (pos.x - (boardW/2)); i < (pos.x + (boardH/2)); i += 100)
     {
-        //this is used to block out areas the boxes can't move through
-        fill(0);
-        rect((width/2)+100, 0, 200, 200); //top 2 black squares 
-        rect(100, height-50, 400, 100);   //bottom black squares
-        
-        noFill();
-        strokeWeight(8);
-        //stroke(98,79,49);
-        stroke(#2EAFF2);
-        rectMode(CENTER);
-        rect(pos.x, pos.y, boardW+20, boardH, 5);  
-        strokeWeight(3);
+      // x1, y1, x2, y2
+      line((pos.x - (boardW/2))+i, 0, (pos.x - (boardH/2))+i, height);
     }
- }
+
+    for ( float j = 0; j < height; j +=100)
+    {
+      // x1, y1, x2, y2
+      line((pos.x - (boardW/2)), 100+j, (pos.x + (boardH/2)), 100+j);
+      //j = j+100;
+    }
+}
+}
