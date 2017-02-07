@@ -1,7 +1,7 @@
 PFont font; //<>//
 Board board1; //this is a 600x600 board
-Target t11, t12, t13, t14, t15, t16, t17, t18;
-Boxes b11, b12, b13, b14, b15, b16, b17, b18;
+Target t11, t12, t13, t14, t15, t16, t17, t18, t21, t22, t23, t24, t25, t26, t27;
+Boxes b11, b12, b13, b14, b15, b16, b17, b18, b21, b22, b23, b24, b25, b26,b27;
 Splash splash;
 
 //int click = 0;
@@ -19,6 +19,7 @@ void setup() {
   splash = new Splash();
   board1 = new Board();
 
+  //level 1 targets and boxes, coded at t11 means level 1 target 1 and b11 box 1 level 1
   t11 = new Target(100, 0);
   t12 = new Target(200, 200);
   t13 = new Target(300, 200);
@@ -55,6 +56,39 @@ void setup() {
   boxes.add(b17);
   boxes.add(b18);
 
+  //level 2 targets and boxes, coded as t21 and b21 meaning box and target level 2 and box/target 1
+  t21 = new Target(100, 0);
+  t22 = new Target(200, 200);
+  t23 = new Target(300, 200);
+  t24 = new Target(400, 300);
+  t25 = new Target(500, 200);
+  t26 = new Target(600, 300);
+  t27 = new Target(600, 400);
+  
+  b21 = new Boxes(200, 100, 'i', 'm', 'j', 'k');
+  b22 = new Boxes(300, 100, 'i', 'm', 'j', 'k');
+  b23 = new Boxes(200, 200, 'i', 'm', 'j', 'k');
+  b24 = new Boxes(200, 300, 'i', 'm', 'j', 'k');
+  b25 = new Boxes(400, 300, 'i', 'm', 'j', 'k');
+  b26 = new Boxes(500, 300, 'i', 'm', 'j', 'k');
+  b27 = new Boxes(500, 400, 'i', 'm', 'j', 'k');
+
+  gameObjects.add(t21);
+  gameObjects.add(t22);
+  gameObjects.add(t23);
+  gameObjects.add(t24);
+  gameObjects.add(t25);
+  gameObjects.add(t26);
+  gameObjects.add(t27);
+  
+  boxes.add(b21);
+  boxes.add(b22);
+  boxes.add(b23);
+  boxes.add(b24);
+  boxes.add(b25);
+  boxes.add(b26);
+  boxes.add(b27);
+  
   font = loadFont("ChalkboardSE-Bold-48.vlw");
   textFont(font, 18);
 }
@@ -108,6 +142,9 @@ void draw() {
     selected.keyPressed();
   }
 }*/
+
+//the above code wouldn't work, so I used what was learnt in YASC for the keys, as per the below
+//this was very helpful to ensure the keys were recognised both on pressed and released
 
 void keyPressed()
 { 
