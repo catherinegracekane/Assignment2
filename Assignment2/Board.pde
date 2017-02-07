@@ -42,6 +42,14 @@ class Board
         //this is used to block out areas the boxes can't move through
         fill(0);
         rect((width/2)+100, 0, 200, 200); //top 2 black squares 
-        rect(100, height-50, 400, 100);   //bottom black squares     
+        rect(100, height-50, 400, 100);   //bottom black squares
+        
+        noFill();
+        strokeWeight(8);
+        //stroke(98,79,49);
+        stroke(#2EAFF2);
+        rectMode(CENTER);
+        rect(pos.x, pos.y, boardW+20, boardH, 5);  
+        strokeWeight(3);
     }
  }

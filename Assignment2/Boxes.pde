@@ -4,13 +4,13 @@
 class Boxes //extends GameObject
 {
   PVector pos;
-  int a, i;
+  int a, i, score, total;
   float z;
   int j;
   color col1, col2; 
   int click;
   char up, down, left, right;
-  
+
   Boxes(float x, float y, char up, char down, char left, char right)
   {
     pos = new PVector(x, y); //co-ordinates of the targets
@@ -25,6 +25,8 @@ class Boxes //extends GameObject
     this.right = right;
     this.up = up;
     this.down = down;
+    score= 0;
+    total = 0;
   }
 
   void display()
@@ -32,24 +34,65 @@ class Boxes //extends GameObject
     println(click);
     println(click);
 
-   /* if (mousePressed && mouseX > this.pos.x && mousePressed && mouseX < (this.pos.x+15))
-    {
-      if (mousePressed && mouseY > this.pos.y && mousePressed && mouseY < (this.pos.y+15))
-      {
-        if (click == 1)
-        {
-          click = 0;
-          col1 = color(0);
-          col2 = color(245, 239, 57);
-        }
-      }
-    }*/
+    textSize(12);
+    text("Score: " + score, 0, 50);
+    /* if (mousePressed && mouseX > this.pos.x && mousePressed && mouseX < (this.pos.x+15))
+     {
+     if (mousePressed && mouseY > this.pos.y && mousePressed && mouseY < (this.pos.y+15))
+     {
+     if (click == 1)
+     {
+     click = 0;
+     col1 = color(0);
+     col2 = color(245, 239, 57);
+     }
+     }
+     }*/
 
     //all level 1 targets here
-    if (this.pos.x == 200 && this.pos.y == 200 || this.pos.x == 300 && this.pos.y == 200 || this.pos.x == 400 && this.pos.y == 300 || this.pos.x == 100 && this.pos.y == 0 || this.pos.x == 500 && this.pos.y == 200 || this.pos.x == 600 && this.pos.y == 300 || this.pos.x == 600 && this.pos.y == 400)
+    if (this.pos.x == 200 && this.pos.y == 200)
     {
       col2 = color(21, 203, 77);
-    }  
+      score = 2;
+      click = 0;
+    } 
+    if (this.pos.x == 300 && this.pos.y == 200)
+    {
+      col2 = color(21, 203, 77);
+      score = 2;
+      click = 0;
+    }    
+    if (this.pos.x == 400 && this.pos.y == 300)
+    {
+      col2 = color(21, 203, 77);
+      score = 2;
+      click = 0;
+    }     
+    if ( this.pos.x == 100 && this.pos.y == 0)
+    {
+      col2 = color(21, 203, 77);
+      score = score + 2;
+      click = 0;
+    }
+    if (this.pos.x == 500 && this.pos.y == 200)
+    {
+      col2 = color(21, 203, 77);
+      score = 2;
+      click = 0;
+    }
+    if (this.pos.x == 600 && this.pos.y == 300)
+    {
+      col2 = color(21, 203, 77);
+      score = 2;
+      click = 0;
+    }
+    if (this.pos.x == 600 && this.pos.y == 400)
+    {
+      col2 = color(21, 203, 77);
+      score = 2;
+      click = 0;
+    }
+
 
     if (click == 0)
     {
@@ -68,7 +111,7 @@ class Boxes //extends GameObject
       }
     }
 
-   if (mousePressed && mouseX > this.pos.x && mouseX < (this.pos.x+j))
+    if (mousePressed && mouseX > this.pos.x && mouseX < (this.pos.x+j))
     {
       if (mousePressed && mouseY > this.pos.y && mouseY < (this.pos.y+j))
       {
@@ -98,30 +141,34 @@ class Boxes //extends GameObject
       }
       keyPressed();
     }
-    
-
   }
 
   void keyPressed() {
-    
-    //frameRate(1);
-    
-    if (checkKey(up))
-    {
-        this.pos.set(this.pos.x, this.pos.y-z); //this moves the boxes one at a time, but needs to move to correct points
-    }
-    if (checkKey(down))
-    {
-        this.pos.set(this.pos.x, this.pos.y+z);     
-    }
-    if (checkKey(left))  
-    {
-        this.pos.set(this.pos.x-z, this.pos.y); 
-    }
-    if (checkKey(right))
-    {
-        this.pos.set(this.pos.x+z, this.pos.y);
-    }
 
+    //for (int i=0; i<boxes.size(); i++)
+    //{
+
+      //if ( boxes.get(i).pos.x == selected.pos.x && boxes.get(i).pos.y == this.pos.x)
+      //{
+        //frameRate(1);
+
+        if (checkKey(up))
+        {
+          this.pos.set(this.pos.x, this.pos.y-z); //this moves the boxes one at a time, but needs to move to correct points
+        }
+        if (checkKey(down))
+        {
+          this.pos.set(this.pos.x, this.pos.y+z);
+        }
+        if (checkKey(left))  
+        {
+          this.pos.set(this.pos.x-z, this.pos.y);
+        }
+        if (checkKey(right))
+        {
+          this.pos.set(this.pos.x+z, this.pos.y);
+        }
+     // }
+    //}
   }
 }
