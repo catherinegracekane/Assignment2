@@ -73,21 +73,21 @@ void setup() {
   b26 = new Boxes(500, 300, 'i', 'm', 'j', 'k');
   b27 = new Boxes(500, 400, 'i', 'm', 'j', 'k');
 
-  gameObjects.add(t21);
-  gameObjects.add(t22);
-  gameObjects.add(t23);
-  gameObjects.add(t24);
-  gameObjects.add(t25);
-  gameObjects.add(t26);
-  gameObjects.add(t27);
+  gameObjects2.add(t21);
+  gameObjects2.add(t22);
+  gameObjects2.add(t23);
+  gameObjects2.add(t24);
+  gameObjects2.add(t25);
+  gameObjects2.add(t26);
+  gameObjects2.add(t27);
   
-  boxes.add(b21);
-  boxes.add(b22);
-  boxes.add(b23);
-  boxes.add(b24);
-  boxes.add(b25);
-  boxes.add(b26);
-  boxes.add(b27);
+  boxes2.add(b21);
+  boxes2.add(b22);
+  boxes2.add(b23);
+  boxes2.add(b24);
+  boxes2.add(b25);
+  boxes2.add(b26);
+  boxes2.add(b27);
   
   font = loadFont("ChalkboardSE-Bold-48.vlw");
   textFont(font, 18);
@@ -95,6 +95,10 @@ void setup() {
 
 ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
 ArrayList<Boxes> boxes = new ArrayList<Boxes>();
+
+ArrayList<GameObject> gameObjects2 = new ArrayList<GameObject>();
+ArrayList<Boxes> boxes2 = new ArrayList<Boxes>();
+
 boolean[] keys = new boolean[1000];
 
 void draw() {
@@ -128,6 +132,17 @@ void draw() {
     background(0);
     splash.instructions();
     break;
+    
+  case 3:
+  
+    for (GameObject t2 : gameObjects2)
+    {
+      t2.display();
+    }
+    for (Boxes b2 : boxes2) 
+    {
+      b2.display();
+    }
 
   default:
     println("Incorrect choice");
