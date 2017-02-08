@@ -78,7 +78,7 @@ void setup() {
   b27 = new Boxes(600, 100, 'i', 'm', 'j', 'k');
   b28 = new Boxes(500, 300, 'i', 'm', 'j', 'k');
   b29 = new Boxes(600, 100, 'i', 'm', 'j', 'k');
-
+  
   gameObjects2.add(t21);
   gameObjects2.add(t22);
   gameObjects2.add(t23);
@@ -201,7 +201,7 @@ void draw() {
     {
       b2.level2();
     }
-    
+        
     println("level 2");
     
     break;
