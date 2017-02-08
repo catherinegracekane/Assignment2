@@ -1,10 +1,10 @@
-Project
+<b>Project<b>
 
 This project is a game called Biddle, which is a box riddle game similar to that of Sokoban.
 You have to work out how to hit each target without intruding on another box.
 Once you select a box, you have to move it to a target and once it's on a target it cannot be moved.
 
-Features
+<b>Features<b>
 
 The game incorporates a number of features, each box object and target object is held in array lists, this is
 useful as the objects have to be accessed individually and their states are changed once they hit the targets
