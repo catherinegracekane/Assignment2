@@ -13,7 +13,8 @@
 
 class Boxes extends GameObject
 {
-  int i,j,z;
+  int i,j;
+  float z;
   color col1, col2, col3; //these control the selection and execute upon target reached
   int click; //this is a counter to control selection and as such, object state
   char up, down, left, right; //controls box movement, as per what was learnt in YASC
@@ -29,7 +30,7 @@ class Boxes extends GameObject
     a = 100;
     j = (a/5);
     i = 0;
-    z = 60/100;
+    z = 100/60;
     col1 = color(0);
     col2 = color(245, 239, 57);
     col3 = color(227,234,21);
@@ -272,7 +273,7 @@ class Boxes extends GameObject
     {
       whenTarget2();
     }
-    if (this.pos.x == 500 && this.pos.y == 100)
+    if (this.pos.x == 200 && this.pos.y == 0)
     {
       whenTarget2();
     }
