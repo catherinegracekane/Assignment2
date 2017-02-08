@@ -262,6 +262,42 @@ class Boxes extends GameObject
       keyPressed();
     }
     
+    textAlign(LEFT);
+    textSize(12);
+    text("Score: " + score, 0, 50);
+    
+    if(score == (boxes2.size() * 50) + (boxes.size()*5) || score == 490 || mouseX == 0)
+    {
+      screen = true;
+      
+      if(screen == true)
+      {
+      clear();
+      background(0);
+
+      pushMatrix();
+      translate(pos.x, pos.y);
+      for (i = 0; i < width/2; i++)
+      {
+        fill(255);
+        stroke(255,0,0);
+        rotate(0.3);
+        ellipse(i, 0, 8, 8);
+      }
+      popMatrix();
+      
+      textAlign(LEFT, CENTER); 
+      textSize(75);
+      text("BULLSEYE", pos.x, pos.y);
+      textSize(25);
+      text("GAME OVER - stay tuned for more level", pos.x, pos.y+150);     
+      if(key == TAB )
+      {
+        gameState = 4;
+      }
+      }
+    }   
+    
   }
   
   void level2Target(){
@@ -305,41 +341,6 @@ class Boxes extends GameObject
       whenTarget2();
     }
     
-    textAlign(LEFT);
-    textSize(12);
-    text("Score: " + score, 0, 50);
-    
-    if(score == (boxes2.size() * 50) + (boxes.size()*5) || score == 490 || mouseX == 0)
-    {
-      screen = true;
-      
-      if(screen == true)
-      {
-      clear();
-      background(0);
-
-      pushMatrix();
-      translate(pos.x, pos.y);
-      for (i = 0; i < width/2; i++)
-      {
-        fill(255);
-        stroke(255,0,0);
-        rotate(0.3);
-        ellipse(i, 0, 8, 8);
-      }
-      popMatrix();
-      
-      textAlign(LEFT, CENTER); 
-      textSize(75);
-      text("BULLSEYE", pos.x, pos.y);
-      textSize(25);
-      text("GAME OVER - stay tuned for more level", pos.x, pos.y+150);     
-      if(key == TAB )
-      {
-        gameState = 4;
-      }
-      }
-    }   
   }
   
   void whenTarget1(){
