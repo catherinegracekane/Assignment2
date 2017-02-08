@@ -11,6 +11,7 @@ class Boxes extends GameObject
   int click;
   char up, down, left, right;
   boolean inc = false;
+  boolean screen = false;
 
   Boxes(float x, float y, char up, char down, char left, char right)
   {
@@ -70,7 +71,6 @@ class Boxes extends GameObject
       }
     }
 
-
     if (click == 1)
     {
       fill(128);
@@ -86,19 +86,16 @@ class Boxes extends GameObject
         line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
       }
       keyPressed();
-    }
-    
+    }   
   }
 
   void keyPressed() {
 
     //for (int i=0; i<boxes.size(); i++)
     //{
-
       //if ( boxes.get(i).pos.x == selected.pos.x && boxes.get(i).pos.y == this.pos.x)
       //{
         //frameRate(1);
-
         if (checkKey(up))
         {
           this.pos.set(this.pos.x, this.pos.y-z); //this moves the boxes one at a time, but needs to move to correct points
@@ -124,114 +121,69 @@ class Boxes extends GameObject
     //all level 1 targets here
     if (this.pos.x == 200 && this.pos.y == 200)
     {
-      col2 = color(21, 203, 77);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 5;
-        inc = true;
-      }
+       whenTarget1();
     } 
     if (this.pos.x == 300 && this.pos.y == 200)
     {
-      col2 = color(21, 203, 77);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 5;
-        inc = true;
-      }
+       whenTarget1();
     }    
     if (this.pos.x == 400 && this.pos.y == 300)
     {
-      col2 = color(21, 203, 77);
-      click = 0;
-      col1 = color(0);
-     
-      if(inc == false)
-      {
-        score = score + 5;
-        inc = true;
-      }
-    } 
-    
+       whenTarget1();
+    }    
     if ( this.pos.x == 100 && this.pos.y == 0)
     {
-      col2 = color(21, 203, 77);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 5;
-        inc = true;
-      }
+       whenTarget1();
     }
     if (this.pos.x == 500 && this.pos.y == 200)
     {
-      col2 = color(21, 203, 77);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 5;
-        inc = true;
-      }
+       whenTarget1();
     }
     if (this.pos.x == 500 && this.pos.y == 300)
     {
-      col2 = color(21, 203, 77);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 5;
-        inc = true;
-      }
-    }
-    
+       whenTarget1();
+    }    
     if (this.pos.x == 600 && this.pos.y == 300)
     {
-      col2 = color(21, 203, 77);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 5;
-        inc = true;
-      }
+       whenTarget1();
     }
     if (this.pos.x == 600 && this.pos.y == 400)
     {
-      col2 = color(21, 203, 77);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 5;
-        inc = true;
-      }
+       whenTarget1();
     }
-    
-    println("This is the score " + score, 0, 200);
-    
-    if(score == 80 || key == TAB)
+        
+    if(score == boxes.size() * 5 || key == ENTER || key == RETURN)
     {
-      text("Press tab to proceed to the next level", 0, 250);
+      background(0);
+      screen = true;
       
-      if(key == TAB )
+      if(screen == true)
+      {
+        
+      clear();
+      
+      pushMatrix();
+      translate(pos.x, pos.y);
+      for (int i = 0; i < width/2; i++)
+      {
+        fill(255);
+        stroke(246,255,5);
+        rotate(0.2);
+        rect(i, 0, 8, 8);
+      }
+      popMatrix();
+      
+      textAlign(LEFT, CENTER);
+      textSize(75);
+      text("NICE WORK", (pos.x/2)-100, pos.y);
+      textSize(25);
+      text("Press TAB to continue", pos.x/2, pos.y+50); 
+      }
+      if(key == TAB)
       {
         gameState = 3;
       }
-    }   
+    }
   }
   
   void level2(){
@@ -298,105 +250,72 @@ class Boxes extends GameObject
     //all level 2 targets here
     if (this.pos.x == 300 && this.pos.y == 500)
     {
-      col3 = color(234,185,21);
-      click = 0;
-      col1 = color(0);
-      ellipse(this.pos.x+50, this.pos.y+50, 30, 30);      
-      
-      if(inc == false)
-      {
-        score = score + 50;
-        inc = true;
-      }
+      whenTarget2();
     } 
     if (this.pos.x == 300 && this.pos.y == 600)
     {
-      col3 = color(234,185,21);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 50;
-        inc = true;
-      }
+      whenTarget2();
     }    
     if (this.pos.x == 200 && this.pos.y == 200)
     {
-      col3 = color(234,185,21);
-      click = 0;
-      col1 = color(0);
-     
-      if(inc == false)
-      {
-        score = score + 50;
-        inc = true;
-      }
-    } 
-    
+      whenTarget2();
+    }   
     if ( this.pos.x == 100 && this.pos.y == 400)
     {
-      col3 = color(234,185,21);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 50;
-        inc = true;
-      }
+      whenTarget2();
     }
     if (this.pos.x == 500 && this.pos.y == 100)
     {
-      col3 = color(234,185,21);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 50;
-        inc = true;
-      }
+      whenTarget2();
     }
     if (this.pos.x == 600 && this.pos.y == 200)
     {
-      col3 = color(234,185,21);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 50;
-        inc = true;
-      }
-    }
-    
+      whenTarget2();
+    }    
     if (this.pos.x == 200 && this.pos.y == 100)
     {
-      col3 = color(234,185,21);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 50;
-        inc = true;
-      }
+      whenTarget2();
     }
     if (this.pos.x == 100 && this.pos.y == 500)
     {
-      col3 = color(234,185,21);
-      click = 0;
-      col1 = color(0);
-      
-      if(inc == false)
-      {
-        score = score + 50;
-        inc = true;
-      }
+      whenTarget2();
     }
     if (this.pos.x == 200 && this.pos.y == 400)
     {
+      whenTarget2();
+    }
+    
+    textAlign(LEFT);
+    textSize(12);
+    text("Score: " + score, 0, 50);
+    
+    if(score == 530)
+    {
+      background(0);
+      textSize(75);
+      text("BULLSEYE", pos.x, pos.y);
+      textSize(25);
+      text("Press TAB to continue", pos.x, pos.y+150);     
+      
+      if(key == TAB )
+      {
+        gameState = 4;
+      }
+    }   
+  }
+  
+  void whenTarget1(){
+      col2 = color(21, 203, 77);
+      click = 0;
+      col1 = color(0);
+      
+      if(inc == false){
+        score = score + 5;
+        inc = true;
+      }
+  }
+  void whenTarget2(){
+     
       col3 = color(234,185,21);
       click = 0;
       col1 = color(0);
@@ -405,20 +324,6 @@ class Boxes extends GameObject
       {
         score = score + 50;
         inc = true;
-      }
-    }
-    
-    textSize(12);
-    text("Score: " + score, 0, 50);
-    
-    if(score == 530 || key == TAB)
-    {
-      text("Press tab to proceed to the next level", 0, 250);
-      
-      if(key == TAB )
-      {
-        gameState = 3;
-      }
-    }   
+      }  
   }
 }

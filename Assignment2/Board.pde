@@ -1,7 +1,6 @@
-//This is used for the player to move around and hit target areas
+//This is the template for the boxes to move around on
 class Board 
 {
-  //rect(x, y, width, height, radi of corners)
   PVector pos;
   int boardW, boardH;
 

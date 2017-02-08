@@ -178,7 +178,7 @@ void draw() {
     {
       b.display();
     }
-
+    
     break;
 
   case 2:
@@ -189,6 +189,8 @@ void draw() {
   case 3:
      
     gameObjects.clear();
+    boxes.clear();
+    
     background(0);
     board1.level2();
        
