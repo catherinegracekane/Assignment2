@@ -66,8 +66,8 @@ void setup() {
   t25 = new Target(500, 100);
   t26 = new Target(600, 200);
   t27 = new Target(200, 100);
-  t28 = new Target(200, 100);
-  t29 = new Target(200, 100);
+  t28 = new Target(100, 500);
+  t29 = new Target(200, 400);
   
   b21 = new Boxes(200, 100, 'i', 'm', 'j', 'k');
   b22 = new Boxes(200, 200, 'i', 'm', 'j', 'k');

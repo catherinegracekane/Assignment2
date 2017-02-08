@@ -25,12 +25,13 @@ class Target extends GameObject
   {
     
       rectMode(CORNER);
-      fill(155,145,41);
+      fill(255);
       stroke(0);
       rect(this.pos.x, this.pos.y, 100, 100);
       stroke(255);
-      fill(255);
-      ellipse(this.pos.x+50, this.pos.y+50, 20, 20);
+      fill(0);
+      ellipse(this.pos.x+50, this.pos.y+50, 30, 30);
+  
   }
 
 }

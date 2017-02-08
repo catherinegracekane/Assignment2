@@ -238,18 +238,20 @@ class Boxes extends GameObject
     if (click == 0)
     {
       rectMode(CORNER);
-      fill(128); 
+      fill(255); 
       stroke(col1);
       rect(pos.x, pos.y, a, a);
-      fill(col2);
-      rect(pos.x, pos.y, j, j);    
+      noFill();
+      strokeWeight(5);
+      ellipseMode(CENTER);
+      ellipse(pos.x+(a/2), pos.y+(a/2), a*0.75, a*0.75); 
+      stroke(47,212,232);
+      ellipse(pos.x+(a/2), pos.y+(a/2), a*0.65, a*0.65);
+      stroke(234,50,21);
+      ellipse(pos.x+(a/2), pos.y+(a/2), a*0.55, a*0.55);
+      
       stroke(0);
-      line(pos.x, pos.y+j, pos.x+a, pos.y+j);
-      line(pos.x, pos.y+(j*4), pos.x+a, pos.y+(j*4));
-      for (int b = 20; b < a; b+=20)
-      {
-        line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
-      }
+      strokeWeight(3);
     }
 
     if (mousePressed && mouseX > this.pos.x && mouseX < (this.pos.x+j))
@@ -268,20 +270,150 @@ class Boxes extends GameObject
 
     if (click == 1)
     {
-      fill(128);
+      rectMode(CORNER);
+      fill(227,234,21); //bright yellow
       stroke(col1);
-      rect(this.pos.x, this.pos.y, a, a); 
-      fill(col2);
-      rect(this.pos.x, this.pos.y, j, j);    
+      rect(pos.x, pos.y, a, a);
+      noFill();
+      strokeWeight(5);
+      ellipseMode(CENTER);
+      ellipse(pos.x+(a/2), pos.y+(a/2), a*0.75, a*0.75); 
+      stroke(47,212,232);
+      ellipse(pos.x+(a/2), pos.y+(a/2), a*0.65, a*0.65);
+      stroke(234,50,21);
+      ellipse(pos.x+(a/2), pos.y+(a/2), a*0.55, a*0.55);
+      
       stroke(0);
-      line(pos.x, pos.y+j, pos.x+a, pos.y+j);
-      line(pos.x, pos.y+(j*4), pos.x+a, pos.y+(j*4));
-      for (int b = 20; b < a; b+=20)
-      {
-        line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
-      }
+      strokeWeight(3);
       keyPressed();
     }
     
+  }
+  
+  void level2Target(){
+    
+    //all level 2 targets here
+    if (this.pos.x == 300 && this.pos.y == 500)
+    {
+      col2 = color(21, 203, 77);
+      click = 0;
+      col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 5;
+        inc = true;
+      }
+    } 
+    if (this.pos.x == 300 && this.pos.y == 600)
+    {
+      col2 = color(21, 203, 77);
+      click = 0;
+      col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 5;
+        inc = true;
+      }
+    }    
+    if (this.pos.x == 200 && this.pos.y == 200)
+    {
+      col2 = color(21, 203, 77);
+      click = 0;
+      col1 = color(0);
+     
+      if(inc == false)
+      {
+        score = score + 5;
+        inc = true;
+      }
+    } 
+    
+    if ( this.pos.x == 100 && this.pos.y == 400)
+    {
+      col2 = color(21, 203, 77);
+      click = 0;
+      col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 5;
+        inc = true;
+      }
+    }
+    if (this.pos.x == 500 && this.pos.y == 100)
+    {
+      col2 = color(21, 203, 77);
+      click = 0;
+      col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 5;
+        inc = true;
+      }
+    }
+    if (this.pos.x == 600 && this.pos.y == 200)
+    {
+      col2 = color(21, 203, 77);
+      click = 0;
+      col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 5;
+        inc = true;
+      }
+    }
+    
+    if (this.pos.x == 200 && this.pos.y == 100)
+    {
+      col2 = color(21, 203, 77);
+      click = 0;
+      col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 5;
+        inc = true;
+      }
+    }
+    if (this.pos.x == 100 && this.pos.y == 500)
+    {
+      col2 = color(21, 203, 77);
+      click = 0;
+      col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 5;
+        inc = true;
+      }
+    }
+    if (this.pos.x == 200 && this.pos.y == 400)
+    {
+      col2 = color(21, 203, 77);
+      click = 0;
+      col1 = color(0);
+      
+      if(inc == false)
+      {
+        score = score + 5;
+        inc = true;
+      }
+    }
+    
+    println("This is the score " + score, 0, 200);
+    
+    if(score == 80 || key == TAB)
+    {
+      text("Press tab to proceed to the next level", 0, 250);
+      
+      if(key == TAB )
+      {
+        gameState = 3;
+      }
+    }   
   }
 }
