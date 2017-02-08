@@ -129,7 +129,7 @@ class Boxes extends GameObject
       
       if(inc == false)
       {
-        score = score + 2;
+        score = score + 5;
         inc = true;
       }
     } 
@@ -141,7 +141,7 @@ class Boxes extends GameObject
       
       if(inc == false)
       {
-        score = score + 2;
+        score = score + 5;
         inc = true;
       }
     }    
@@ -153,7 +153,7 @@ class Boxes extends GameObject
      
       if(inc == false)
       {
-        score = score + 2;
+        score = score + 5;
         inc = true;
       }
     } 
@@ -166,7 +166,7 @@ class Boxes extends GameObject
       
       if(inc == false)
       {
-        score = score + 2;
+        score = score + 5;
         inc = true;
       }
     }
@@ -178,7 +178,7 @@ class Boxes extends GameObject
       
       if(inc == false)
       {
-        score = score + 2;
+        score = score + 5;
         inc = true;
       }
     }
@@ -190,7 +190,7 @@ class Boxes extends GameObject
       
       if(inc == false)
       {
-        score = score + 2;
+        score = score + 5;
         inc = true;
       }
     }
@@ -203,7 +203,7 @@ class Boxes extends GameObject
       
       if(inc == false)
       {
-        score = score + 2;
+        score = score + 5;
         inc = true;
       }
     }
@@ -215,14 +215,14 @@ class Boxes extends GameObject
       
       if(inc == false)
       {
-        score = score + 2;
+        score = score + 5;
         inc = true;
       }
     }
     
     println("This is the score " + score, 0, 200);
     
-    if(score == 16 || key == TAB)
+    if(score == 80 || key == TAB)
     {
       text("Press tab to proceed to the next level", 0, 250);
       

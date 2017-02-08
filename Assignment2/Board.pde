@@ -44,6 +44,7 @@ class Board
     rect((width/2)+100, 0, 200, 200); //top 2 black squares 
     rect(100, height-50, 400, 100);   //bottom black squares
 
+    //game border
     noFill();
     strokeWeight(8);
     //stroke(98,79,49);
@@ -56,7 +57,7 @@ class Board
   void level2()
   {
 
-    fill(23, 30, 224 );
+    fill(80,152,227);
     rectMode(CENTER);
     rect(pos.x, pos.y, boardW, boardH, 5);  
 
@@ -76,5 +77,20 @@ class Board
       line((pos.x - (boardW/2)), 100+j, (pos.x + (boardH/2)), 100+j);
       //j = j+100;
     }
+    
+    //this is used to block out areas the boxes can't move through
+    fill(0);
+    rect(pos.x, pos.y-150, 200, 100); //middle black squares 
+    rect(100, 0, 200, 200); //corner black squares   
+    rect(100, 100, 200, 200); //corner black square  
+    
+    //border of game
+    noFill();
+    strokeWeight(8);
+    //stroke(98,79,49);
+    stroke(#2EAFF2);
+    rectMode(CENTER);
+    rect(pos.x, pos.y, boardW+20, boardH, 5);  
+    strokeWeight(3);
 }
 }

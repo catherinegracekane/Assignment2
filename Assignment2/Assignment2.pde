@@ -1,8 +1,8 @@
 PFont font; //<>//
 Board board1; //this is a 600x600 board
-Target t11, t12, t13, t14, t15, t16, t17, t18, t21, t22, t23, t24, t25, t26, t27;
+Target t11, t12, t13, t14, t15, t16, t17, t18, t21, t22, t23, t24, t25, t26, t27, t28, t29;
 Target t31, t32, t33, t34, t35, t36, t37, t38;
-Boxes b11, b12, b13, b14, b15, b16, b17, b18, b21, b22, b23, b24, b25, b26,b27;
+Boxes b11, b12, b13, b14, b15, b16, b17, b18, b21, b22, b23, b24, b25, b26,b27, b28, b29;
 Boxes b31, b32, b33, b34, b35, b36, b37, b38;
 Splash splash;
 
@@ -66,6 +66,8 @@ void setup() {
   t25 = new Target(500, 100);
   t26 = new Target(600, 200);
   t27 = new Target(200, 100);
+  t28 = new Target(200, 100);
+  t29 = new Target(200, 100);
   
   b21 = new Boxes(200, 100, 'i', 'm', 'j', 'k');
   b22 = new Boxes(200, 200, 'i', 'm', 'j', 'k');
@@ -74,6 +76,8 @@ void setup() {
   b25 = new Boxes(400, 300, 'i', 'm', 'j', 'k');
   b26 = new Boxes(500, 300, 'i', 'm', 'j', 'k');
   b27 = new Boxes(600, 100, 'i', 'm', 'j', 'k');
+  b28 = new Boxes(500, 300, 'i', 'm', 'j', 'k');
+  b29 = new Boxes(600, 100, 'i', 'm', 'j', 'k');
 
   gameObjects2.add(t21);
   gameObjects2.add(t22);
@@ -82,6 +86,8 @@ void setup() {
   gameObjects2.add(t25);
   gameObjects2.add(t26);
   gameObjects2.add(t27);
+  gameObjects2.add(t28);
+  gameObjects2.add(t29); 
   
   boxes2.add(b21);
   boxes2.add(b22);
@@ -90,6 +96,8 @@ void setup() {
   boxes2.add(b25);
   boxes2.add(b26);
   boxes2.add(b27);
+  boxes2.add(b28);
+  boxes2.add(b29);
   
  //level 3 targets and boxes, coded as t31 and b31 meaning box and target level 3 and box/target 1
   if(gameState == 4)
