@@ -9,9 +9,8 @@ Splash splash;
 //int click = 0;
 int gameState = 0; //counter used to determine screen
 int score = 0;
-int total = 0;
 
-Boxes selected;
+Boxes selected; //used to initialise box object to "this"
 
 void setup() {
 
@@ -142,7 +141,10 @@ void setup() {
   font = loadFont("ChalkboardSE-Bold-48.vlw");
   textFont(font, 18);
 }
-//level 1
+
+//These arraylists store box objects and target objects but are cleared per level
+//and the new arraylist is initialised
+//level 1 
 ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
 ArrayList<Boxes> boxes = new ArrayList<Boxes>();
 //level 2

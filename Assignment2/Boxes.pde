@@ -1,46 +1,52 @@
-//These are box objects to be moved around until all boxes sit in target place
-//They will be created in the same way player was created in YASC however
-//there's a number of rules to be applied in order for their movement to be controlled
+//The box objects are clicked by the user, moved around the board to hit a target square
+//once it reaches a target square, this can't be changed 
+
+/* Function in this class are:
+1) display
+2) keyPressed
+3) level1 - this declares target positions to reach
+4) level2 - this is the new box objects in their new state aka for aesthetic purposes
+5) level2Target - this declares new target positions to reach
+6) whenTarget1 - what happens when target is reached level1
+7) whenTarget2 - what happens when target is reached level2
+*/
+
 class Boxes extends GameObject
 {
-  PVector pos;
-  int i;
-  float z;
-  int j;
-  color col1, col2, col3; 
-  int click;
-  char up, down, left, right;
-  boolean inc = false;
-  boolean screen = false;
+  int i,j,z;
+  color col1, col2, col3; //these control the selection and execute upon target reached
+  int click; //this is a counter to control selection and as such, object state
+  char up, down, left, right; //controls box movement, as per what was learnt in YASC
+  boolean inc = false; //I needed to use this to stop the score counter incrementing 
+  //continuously in draw, therefore the counter incremented by 5 or 50 only once each time
+  //a target is hit
+  boolean screen = false; //this was to stop a bug on the splash screen which left the
+  //last target box reached on screen
 
   Boxes(float x, float y, char up, char down, char left, char right)
   {
     pos = new PVector(x, y); //co-ordinates of the targets
     a = 100;
     j = (a/5);
+    i = 0;
+    z = 60/100;
     col1 = color(0);
     col2 = color(245, 239, 57);
     col3 = color(227,234,21);
     this.click = 0;
-    i = 0;
-    z = 100/60;
     this.left = left;
     this.right = right;
     this.up = up;
     this.down = down;
-    total = total + score;
   }
 
   void display()
   {
-    println(click);
-    println(click);
-
     textSize(12);
     text("Score: " + score, 0, 50);
-
-    level1();
-
+    
+    level1(); //targets declared
+    //initial state of the box objects
     if (click == 0)
     {
       rectMode(CORNER);
@@ -57,7 +63,7 @@ class Boxes extends GameObject
         line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
       }
     }
-
+    //this controls click counter, you have to click in top corner of boxes to select
     if (mousePressed && mouseX > this.pos.x && mouseX < (this.pos.x+j))
     {
       if (mousePressed && mouseY > this.pos.y && mouseY < (this.pos.y+j))
@@ -70,7 +76,7 @@ class Boxes extends GameObject
         }
       }
     }
-
+    //new state of box once selected
     if (click == 1)
     {
       fill(128);
@@ -89,12 +95,11 @@ class Boxes extends GameObject
     } 
     
     //level1 splash screen       
-    if(score == boxes.size() * 5 || key == ENTER || key == RETURN)
+    if(score == boxes.size() * 5)
     {
       screen = true;
       
-      if(screen == true)
-      {
+      if(screen == true){
         
       clear();
       background(0);
@@ -118,11 +123,14 @@ class Boxes extends GameObject
       }
       if(key == TAB)
       {
-        gameState = 3;
+        gameState = 3; //move to next level
       }
     }
   }
 
+//Initially I tried to loop through objects in array list to get their positions when 
+//clicked and move accordingly, which wouldn't work and as such I incorporated what we'd
+//learnt about checkKey and used keys instead of the mouseClicked to control object movement
   void keyPressed() {
 
     //for (int i=0; i<boxes.size(); i++)

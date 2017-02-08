@@ -1,4 +1,7 @@
 //Splash Screen
+//This has the design code for the splash screen, showing pushMatrix, popMatrix
+//rotation and translation
+//It also displays file input for the instructions
 
 class Splash {
 
@@ -17,7 +20,6 @@ class Splash {
 
     pushMatrix();
     translate(width/2, height/2);
-
     for (int i = 0; i < width/2; i++)
     {
       fill(255);
@@ -25,7 +27,6 @@ class Splash {
       rotate(0.2);
       rect(i, 0, 10, 10);
     }
-
     popMatrix();
 
     pushMatrix();
@@ -53,7 +54,7 @@ class Splash {
     text("1) Press Enter to Begin", (width/4), height/2+100);
     text("2) Click here for Instructions", (width/4), height/2+170);
 
-    if (mousePressed && mouseX > 0 && mouseY < 50)
+    if (mousePressed && mouseX > (width/4) && mouseY < height/2+170)
     //if(key == CODED && keyCode == '1') //fix this when i have internet
     {
       gameState = 2;

@@ -1,3 +1,5 @@
+//For boxes and targets
+
 class GameObject
 {
   PVector pos;

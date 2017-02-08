@@ -63,13 +63,13 @@ class Board
     //create a grid
     stroke(0);
     strokeWeight(3);
-    //vertical grid
+    //vertical lines
     for ( float i = (pos.x - (boardW/2)); i < (pos.x + (boardH/2)); i += 100)
     {
       // x1, y1, x2, y2
       line((pos.x - (boardW/2))+i, 0, (pos.x - (boardH/2))+i, height);
     }
-
+    //horizontal lines
     for ( float j = 0; j < height; j +=100)
     {
       // x1, y1, x2, y2
