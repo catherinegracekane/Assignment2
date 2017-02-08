@@ -9,6 +9,7 @@
 5) level2Target - this declares new target positions to reach
 6) whenTarget1 - what happens when target is reached level1
 7) whenTarget2 - what happens when target is reached level2
+8) sound - plays the sound each time for the boxes hitting their target
 */
 
 class Boxes extends GameObject
@@ -23,14 +24,14 @@ class Boxes extends GameObject
   //a target is hit
   boolean screen = false; //this was to stop a bug on the splash screen which left the
   //last target box reached on screen
-
+  boolean soundclip = false;
   Boxes(float x, float y, char up, char down, char left, char right)
   {
     pos = new PVector(x, y); //co-ordinates of the targets
     a = 100;
     j = (a/5);
     i = 0;
-    z = 100/60;
+    z = (100/60)*4;
     col1 = color(0);
     col2 = color(245, 239, 57);
     col3 = color(227,234,21);
@@ -104,7 +105,7 @@ class Boxes extends GameObject
         
       clear();
       background(0);
-      
+     
       pushMatrix();
       translate(pos.x, pos.y);
       for (int i = 0; i < width/2; i++)
@@ -127,6 +128,7 @@ class Boxes extends GameObject
         gameState = 3; //move to next level
       }
     }
+    screen = false;
   }
 
 //Initially I tried to loop through objects in array list to get their positions when 
@@ -164,34 +166,42 @@ class Boxes extends GameObject
     if (this.pos.x == 200 && this.pos.y == 200)
     {
        whenTarget1();
+       soundClip(); 
     } 
     if (this.pos.x == 300 && this.pos.y == 200)
     {
        whenTarget1();
+       soundClip();
     }    
     if (this.pos.x == 400 && this.pos.y == 300)
     {
        whenTarget1();
+       soundClip();
     }    
     if ( this.pos.x == 100 && this.pos.y == 0)
     {
        whenTarget1();
+       soundClip();
     }
     if (this.pos.x == 500 && this.pos.y == 200)
     {
        whenTarget1();
+       soundClip();
     }
     if (this.pos.x == 500 && this.pos.y == 300)
     {
        whenTarget1();
+       soundClip();
     }    
     if (this.pos.x == 600 && this.pos.y == 300)
     {
        whenTarget1();
+       soundClip();
     }
     if (this.pos.x == 600 && this.pos.y == 400)
     {
        whenTarget1();
+       soundClip();
     }
   }
   
@@ -260,6 +270,7 @@ class Boxes extends GameObject
     if (this.pos.x == 300 && this.pos.y == 500)
     {
       whenTarget2();
+      soundClip();
     } 
     if (this.pos.x == 300 && this.pos.y == 600)
     {
@@ -298,17 +309,35 @@ class Boxes extends GameObject
     textSize(12);
     text("Score: " + score, 0, 50);
     
-    if(score == (boxes2.size() * 50) + (boxes.size()*5) || score == 490)
+    if(score == (boxes2.size() * 50) + (boxes.size()*5) || score == 490 || mouseX == 0)
     {
+      screen = true;
+      
+      if(screen == true)
+      {
+      clear();
       background(0);
+
+      pushMatrix();
+      translate(pos.x, pos.y);
+      for (i = 0; i < width/2; i++)
+      {
+        fill(255);
+        stroke(255,0,0);
+        rotate(0.3);
+        ellipse(i, 0, 8, 8);
+      }
+      popMatrix();
+      
+      textAlign(LEFT, CENTER); 
       textSize(75);
       text("BULLSEYE", pos.x, pos.y);
       textSize(25);
-      text("Press TAB to continue", pos.x, pos.y+150);     
-      
+      text("GAME OVER - stay tuned for more level", pos.x, pos.y+150);     
       if(key == TAB )
       {
         gameState = 4;
+      }
       }
     }   
   }
@@ -327,12 +356,23 @@ class Boxes extends GameObject
      
       col3 = color(234,185,21);
       click = 0;
-      col1 = color(0);
+      col1 = color(0);  
       
       if(inc == false)
       {
         score = score + 50;
         inc = true;
-      }  
+      } 
   }
+  
+  void soundClip(){
+       if(soundclip == false)
+       {
+         pop.rewind();
+         pop.play();
+         soundclip = true;
+       }
+  }
+
+  
 }

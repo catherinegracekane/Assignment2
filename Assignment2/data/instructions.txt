@@ -1,7 +1,9 @@
-How to Play
+How to Play Biddle
 
-1) You do this
-2) You do that
-3) Don't do dat
+1) Select each box on the board, when selected you only move one at a time
+2) Once a box hits the target it is locked in place, you can’t move it again
+3) You must move around the board and hit the targets without colliding with other objects
+
+Good luck!
 
 To return to main screen, press tab.

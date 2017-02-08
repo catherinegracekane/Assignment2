@@ -1,4 +1,6 @@
-PFont font; //<>//
+import ddf.minim.*; //sound library //<>//
+
+PFont font;
 Board board1; //this is a 600x600 board
 Target t11, t12, t13, t14, t15, t16, t17, t18, t21, t22, t23, t24, t25, t26, t27, t28, t29;
 Target t31, t32, t33, t34, t35, t36, t37, t38;
@@ -12,6 +14,10 @@ int score = 0;
 
 Boxes selected; //used to initialise box object to "this"
 
+//clip from http://soundbible.com/tags-click.html
+AudioPlayer pop, bg;
+Minim minim;
+
 void setup() {
 
   size(800, 600, P2D);
@@ -19,7 +25,13 @@ void setup() {
   
   splash = new Splash();
   board1 = new Board();
-
+  
+  //sound
+  //http://soundimage.org/wp-content/uploads/2014/04/Fantasy_Game_Background.mp3
+  minim = new Minim(this);
+  pop = minim.loadFile("pop.wav");
+  bg = minim.loadFile("backgroundSound.mp3");
+  
   //level 1 targets and boxes, coded at t11 means level 1 target 1 and b11 box 1 level 1
   t11 = new Target(100, 0);
   t12 = new Target(200, 200);
@@ -140,6 +152,7 @@ void setup() {
   
   font = loadFont("ChalkboardSE-Bold-48.vlw");
   textFont(font, 18);
+  
 }
 
 //These arraylists store box objects and target objects but are cleared per level
@@ -158,6 +171,8 @@ boolean[] keys = new boolean[1000];
 
 void draw() {
 
+  bg.play();
+  
   switch (gameState)
   {
   case 0:
