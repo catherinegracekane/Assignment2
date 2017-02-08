@@ -86,7 +86,41 @@ class Boxes extends GameObject
         line(pos.x+b, pos.y+23, pos.x+b, pos.y+80);
       }
       keyPressed();
-    }   
+    } 
+    
+    //level1 splash screen       
+    if(score == boxes.size() * 5 || key == ENTER || key == RETURN)
+    {
+      screen = true;
+      
+      if(screen == true)
+      {
+        
+      clear();
+      background(0);
+      
+      pushMatrix();
+      translate(pos.x, pos.y);
+      for (int i = 0; i < width/2; i++)
+      {
+        fill(255);
+        stroke(246,255,5);
+        rotate(0.2);
+        rect(i, 0, 8, 8);
+      }
+      popMatrix();
+      
+      textAlign(LEFT, CENTER);
+      textSize(75);
+      text("NICE WORK", (pos.x/2)-100, pos.y);
+      textSize(25);
+      text("Press TAB to continue", pos.x/2, pos.y+50); 
+      }
+      if(key == TAB)
+      {
+        gameState = 3;
+      }
+    }
   }
 
   void keyPressed() {
@@ -116,8 +150,7 @@ class Boxes extends GameObject
     //}
   }
   
-  void level1 ( ) {
-    
+  void level1 ( ) {   
     //all level 1 targets here
     if (this.pos.x == 200 && this.pos.y == 200)
     {
@@ -150,39 +183,6 @@ class Boxes extends GameObject
     if (this.pos.x == 600 && this.pos.y == 400)
     {
        whenTarget1();
-    }
-        
-    if(score == boxes.size() * 5 || key == ENTER || key == RETURN)
-    {
-      background(0);
-      screen = true;
-      
-      if(screen == true)
-      {
-        
-      clear();
-      
-      pushMatrix();
-      translate(pos.x, pos.y);
-      for (int i = 0; i < width/2; i++)
-      {
-        fill(255);
-        stroke(246,255,5);
-        rotate(0.2);
-        rect(i, 0, 8, 8);
-      }
-      popMatrix();
-      
-      textAlign(LEFT, CENTER);
-      textSize(75);
-      text("NICE WORK", (pos.x/2)-100, pos.y);
-      textSize(25);
-      text("Press TAB to continue", pos.x/2, pos.y+50); 
-      }
-      if(key == TAB)
-      {
-        gameState = 3;
-      }
     }
   }
   
@@ -289,7 +289,7 @@ class Boxes extends GameObject
     textSize(12);
     text("Score: " + score, 0, 50);
     
-    if(score == 530)
+    if(score == (boxes2.size() * 50) + (boxes.size()*5) || score == 490)
     {
       background(0);
       textSize(75);

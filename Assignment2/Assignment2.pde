@@ -63,7 +63,7 @@ void setup() {
   t22 = new Target(300, 600);
   t23 = new Target(200, 200);
   t24 = new Target(100, 400);
-  t25 = new Target(500, 100);
+  t25 = new Target(200, 0);
   t26 = new Target(600, 200);
   t27 = new Target(200, 100);
   t28 = new Target(100, 500);
@@ -75,8 +75,8 @@ void setup() {
   b24 = new Boxes(400, 300, 'i', 'm', 'j', 'k');
   b25 = new Boxes(400, 300, 'i', 'm', 'j', 'k');
   b26 = new Boxes(500, 300, 'i', 'm', 'j', 'k');
-  b27 = new Boxes(600, 100, 'i', 'm', 'j', 'k');
-  b28 = new Boxes(500, 300, 'i', 'm', 'j', 'k');
+  b27 = new Boxes(500, 500, 'i', 'm', 'j', 'k');
+  b28 = new Boxes(600, 400, 'i', 'm', 'j', 'k');
   b29 = new Boxes(600, 100, 'i', 'm', 'j', 'k');
   
   gameObjects2.add(t21);
