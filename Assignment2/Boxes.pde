@@ -280,7 +280,7 @@ class Boxes extends GameObject
     {
       whenTarget2();
     }   
-    if ( this.pos.x == 100 && this.pos.y == 400)
+    if ( this.pos.x == 100 && this.pos.y == 200)
     {
       whenTarget2();
     }

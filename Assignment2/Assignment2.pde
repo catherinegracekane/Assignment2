@@ -73,7 +73,7 @@ void setup() {
   t21 = new Target(300, 500);
   t22 = new Target(300, 600);
   t23 = new Target(200, 200);
-  t24 = new Target(100, 400);
+  t24 = new Target(100, 200);
   t25 = new Target(200, 0);
   t26 = new Target(600, 200);
   t27 = new Target(200, 100);
